@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: 70px;
+    background-color: #1E293B;
+}
+
+/* NAVBAR LOGO AND HEADING */
+.web-logo img{
+    height: 50px;
+    width: auto;
+    border-radius: 10%;
+    margin-left: 150px;
+}
+.web-logo a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+    font-weight: 700;
+}
+.web-logo a span{
+    color: rgba(255, 38, 0, 0.967);
+    font-weight: 700;
+}
+
+/* NAVBAR LINKS */
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links ul{
+    display: flex;
+    align-items: center;
+    gap:50px;
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+.nav-links li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-links a{
+    color:white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 530;
+    transition: all 0.5s ease-in-out;
+    padding: 10px;
+}
+.nav-links a:hover{
+    background-color: rgba(249, 0, 0, 0.7);
+    border-radius: 35%;
+    text-decoration: underline;
+    text-decoration-color: rgb(203, 66, 66);
+}
+
+/* AUTH BUTTONS */
+.auth-btn{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 100px;
+}
+#sign-in{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius:5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    text-decoration: none;
+}
+#sign-in:hover{
+    background-color: rgba(249, 0, 0, 0.7) ;
+    border-radius: 100px;
+    border: 1px solid  rgba(249, 0, 0, 0.7);
+}
+#sign-up{
+    background-color: rgb(249, 0, 0);
+    border: 1px solid rgb(249, 0, 0);
+    color: white;
+    font-weight: 500px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    text-decoration: none;
+}
+#sign-up:hover{
+    background-color: transparent;
+    border: 1px solid rgb(249, 0, 0);
+    color: rgb(249, 0, 0);
+    border-radius: 100px  ;
+}
+
