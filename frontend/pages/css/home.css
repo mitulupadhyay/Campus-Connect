@@ -1,113 +1,254 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+
+body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===========================
+        NAVBAR
+=========================== */
+
+.navbar{
+    width: 100%;
+    background-color: #1E293B;
+}
+
+
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
+
+    max-width: 1200px;
+    width: 100%;
     height: 70px;
-    background-color: #1E293B;
+
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
-/* NAVBAR LOGO AND HEADING */
-.web-logo img{
-    height: 50px;
-    width: auto;
-    border-radius: 10%;
-    margin-left: 150px;
+/* ===========================
+        LOGO
+=========================== */
+
+.web-logo{
+    flex: 1;
 }
+
 .web-logo a{
     display: flex;
     align-items: center;
     gap: 10px;
+
     text-decoration: none;
-    font-size: 26px;
+    font-size: 24px;
     color: white;
     font-weight: 700;
 }
-.web-logo a span{
-    color: rgba(255, 38, 0, 0.967);
-    font-weight: 700;
+
+.web-logo i{
+    color:#FF2600;
+    font-size:26px;
 }
 
-/* NAVBAR LINKS */
+.web-logo span{
+    color:#FF2600;
+}
+
+/* ===========================
+      NAVIGATION LINKS
+=========================== */
 
 .nav-links{
+    flex: 2;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 .nav-links ul{
-    display: flex;
-    align-items: center;
-    gap:50px;
-    text-decoration: none;
-    color: rgb(255, 0, 0);
+    display:flex;
+    align-items:center;
+    gap:40px;
+    list-style:none;
 }
-.nav-links li {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
 .nav-links a{
     color:white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 530;
-    transition: all 0.5s ease-in-out;
-    padding: 10px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+
+    padding:10px 15px;
+    border-radius:30px;
+    transition:0.3s;
 }
+
 .nav-links a:hover{
-    background-color: rgba(249, 0, 0, 0.7);
-    border-radius: 35%;
-    text-decoration: underline;
-    text-decoration-color: rgb(203, 66, 66);
+    background:rgba(249,0,0,.8);
 }
 
-/* AUTH BUTTONS */
+.nav-links i{
+    color:white;
+}
+.mobile-auth{
+    display: none;
+}
+
+/* ===========================
+        BUTTONS
+=========================== */
+
 .auth-btn{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding-right: 100px;
-}
-#sign-in{
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    font-weight: 500;
-    padding: 8px 15px;
-    border-radius:5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-size: 16px;
-    text-decoration: none;
-}
-#sign-in:hover{
-    background-color: rgba(249, 0, 0, 0.7) ;
-    border-radius: 100px;
-    border: 1px solid  rgba(249, 0, 0, 0.7);
-}
-#sign-up{
-    background-color: rgb(249, 0, 0);
-    border: 1px solid rgb(249, 0, 0);
-    color: white;
-    font-weight: 500px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    font-size: 16px;
-    text-decoration: none;
-}
-#sign-up:hover{
-    background-color: transparent;
-    border: 1px solid rgb(249, 0, 0);
-    color: rgb(249, 0, 0);
-    border-radius: 100px  ;
+    flex:1;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    gap:15px;
 }
 
+#sign-in{
+    background:transparent;
+    border:1px solid white;
+
+    color:white;
+    padding:8px 15px;
+
+    border-radius:5px;
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+#sign-in:hover{
+    background:rgba(249,0,0,.7);
+    border-color:rgba(249,0,0,.7);
+    border-radius:100px;
+}
+
+#sign-up{
+    background:#F90000;
+    border:1px solid #F90000;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:5px;
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+#sign-up:hover{
+    background:transparent;
+    color:#F90000;
+    border-color:#F90000;
+    border-radius:100px;
+}
+
+/* ===========================
+      HAMBURGER MENU
+=========================== */
+
+.menu-toggle{
+    display:none;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    .container{
+        padding:0 20px;
+    }
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+        top:70px;
+        left:0;
+
+        width:100%;
+        background:#1E293B;
+        flex-direction: column;
+    }
+
+    .nav-links ul{
+        flex-direction:column;
+        gap:0;
+        width:100%;
+    }
+
+    .nav-links li{
+        width:100%;
+        text-align:center;
+        padding:15px 0;
+    }
+
+    .nav-links.active{
+        display:flex;
+        justify-content: center;
+    }
+
+    .auth-btn{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+        margin-left: auto;
+    }
+    .mobile-auth{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:20px;
+}
+#mobile-sign-in,
+#mobile-sign-up{
+    text-decoration:none;
+    text-align:center;
+    padding:12px;
+    border-radius:5px;
+    font-weight:600;
+}
+#mobile-sign-in{
+    border:1px solid white;
+    color:white;
+    transition: all 0.4s ease-in-out;
+}
+#mobile-sign-in:hover{
+    border-radius: 100px;
+}
+
+#mobile-sign-up{
+    background-color:#F90000;
+    color:white;
+    transition: all 0.4s ease-in-out;
+}
+#mobile-sign-up:hover{
+    background-color:transparent;
+    border: 1px solid #F90000 ;
+    border-radius: 100px;
+    color: #F90000;
+}
+}
