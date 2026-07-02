@@ -6,41 +6,80 @@
     <link rel="icon" href="../assets/img/logo.png" type="image/png">
     <title>Campus Connect</title>
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
+
     <header>
-        <nav>
+        <nav class="navbar">
+
             <div class="container">
 
-                <!-- WEBSITE LOGO  -->
+                <!-- WEBSITE LOGO -->
                 <div class="web-logo">
                     <a href="home.html">
-                        <img src="../assets/img/logo.png" alt="website_logo">
+                        <i class="fa-solid fa-graduation-cap"></i>
                         Campus<span>Connect</span>
                     </a>
                 </div>
 
-                <!-- WEBSITE NAVIGATION LINK  -->
-
+                <!-- NAVIGATION LINKS -->
                 <div class="nav-links">
                     <ul>
-                        
-                            <li><i class="fa-solid fa-house"></i><a href="home.html">Home</a></li>
-                            <li><i class="fa-solid fa-calendar"></i><a href="events.html">Events</a></li>
-                            <li><i class="fa-solid fa-people-group"></i><a href="clubs.html">Clubs</a></li>
-                            <li><i class="fa-solid fa-user"></i><a href="aboutus.html">About us</a></li>
+                        <li>
+                            <a href="home.html">
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="events.html">
+                                <i class="fa-solid fa-calendar"></i>
+                                Events
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="clubs.html">
+                                <i class="fa-solid fa-people-group"></i>
+                                Clubs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="aboutus.html">
+                                <i class="fa-solid fa-user"></i>
+                                About Us
+                            </a>
+                        </li>
                     </ul>
+                    
+                    <div class="mobile-auth">
+                        <a href="signin.html" id="mobile-sign-in">Sign In</a>
+                        <a href="signup.html" id="mobile-sign-up">Sign Up</a>
+                    </div>
                 </div>
 
-
+                <!-- AUTH BUTTONS -->
                 <div class="auth-btn">
                     <a href="signin.html" id="sign-in">Sign In</a>
                     <a href="signup.html" id="sign-up">Sign Up</a>
                 </div>
 
+                <!-- MOBILE MENU -->
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
             </div>
+
         </nav>
     </header>
+
+    <script src="js/navbar.js"></script>
+
+    <script src="/Campus-Connect/js/home.js"></script>
 </body>
 </html>
