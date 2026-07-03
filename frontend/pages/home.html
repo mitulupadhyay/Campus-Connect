@@ -1,130 +1,288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/img/logo.png" type="image/png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
     <title>Campus Connect</title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-<body>
-
+  <body>
     <!-- NAVBAR -->
 
     <header>
-        <nav class="navbar">
+      <nav class="navbar">
+        <div class="container">
+          <!-- WEBSITE LOGO -->
+          <div class="web-logo">
+            <a href="home.html">
+              <i class="fa-solid fa-graduation-cap"></i>
+              Campus<span>Connect</span>
+            </a>
+          </div>
 
-            <div class="container">
+          <!-- NAVIGATION LINKS -->
+          <div class="nav-links">
+            <ul>
+              <li>
+                <a href="home.html">
+                  <i class="fa-solid fa-house"></i>
+                  Home
+                </a>
+              </li>
 
-                <!-- WEBSITE LOGO -->
-                <div class="web-logo">
-                    <a href="home.html">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        Campus<span>Connect</span>
-                    </a>
-                </div>
+              <li>
+                <a href="events.html">
+                  <i class="fa-solid fa-calendar"></i>
+                  Events
+                </a>
+              </li>
 
-                <!-- NAVIGATION LINKS -->
-                <div class="nav-links">
-                    <ul>
-                        <li>
-                            <a href="home.html">
-                                <i class="fa-solid fa-house"></i>
-                                Home
-                            </a>
-                        </li>
+              <li>
+                <a href="clubs.html">
+                  <i class="fa-solid fa-people-group"></i>
+                  Clubs
+                </a>
+              </li>
 
-                        <li>
-                            <a href="events.html">
-                                <i class="fa-solid fa-calendar"></i>
-                                Events
-                            </a>
-                        </li>
+              <li>
+                <a href="aboutus.html">
+                  <i class="fa-solid fa-user"></i>
+                  About Us
+                </a>
+              </li>
+            </ul>
 
-                        <li>
-                            <a href="clubs.html">
-                                <i class="fa-solid fa-people-group"></i>
-                                Clubs
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="aboutus.html">
-                                <i class="fa-solid fa-user"></i>
-                                About Us
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <div class="mobile-auth">
-                        <a href="signin.html" id="mobile-sign-in">Sign In</a>
-                        <a href="signup.html" id="mobile-sign-up">Sign Up</a>
-                    </div>
-                </div>
-
-                <!-- AUTH BUTTONS -->
-                <div class="auth-btn">
-                    <a href="signin.html" id="sign-in">Sign In</a>
-                    <a href="signup.html" id="sign-up">Sign Up</a>
-                </div>
-
-                <!-- MOBILE MENU -->
-                <div class="menu-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-
+            <div class="mobile-auth">
+              <a href="signin.html" id="mobile-sign-in">Sign In</a>
+              <a href="signup.html" id="mobile-sign-up">Sign Up</a>
             </div>
+          </div>
 
-        </nav>
+          <!-- AUTH BUTTONS -->
+          <div class="auth-btn">
+            <a href="signin.html" id="sign-in">Sign In</a>
+            <a href="signup.html" id="sign-up">Sign Up</a>
+          </div>
+
+          <!-- MOBILE MENU -->
+          <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-container">
+      <section class="hero">
+        <div class="hero-container">
+          <!-- HERO TEXT (LEFT SIDE)  -->
+          <div class="hero-content">
+            <span class="hero-badge"
+              ><i class="fa-solid fa-tag"></i> Your campus, one place</span
+            >
+            <h1>Discover, Join and Manage Every Campus Event</h1>
+            <p class="hero-content-paragraph">
+              CampusConnect brings all your college events, clubs and
+              opportunities together — so you never miss out on what matters.
+            </p>
 
-                <!-- HERO TEXT (LEFT SIDE)  -->
-                <div class="hero-content">
-                    <span class="hero-badge"><i class="fa-solid fa-tag"></i> Your campus, one place</span>
-                    <h1>Discover, Join and Manage Every Campus Event</h1>
-                    <p class="hero-content-paragraph">CampusConnect brings all your college events, clubs and opportunities together — so you never miss out on what matters.</p>
+            <!-- HERO BUTTONS -->
+            <div class="hero-btn">
+              <a href="events.html" class="explore-events">Explore Events</a>
+              <a href="signup.html" class="get-started">Get Started</a>
+            </div>
 
+            <!-- HERO STATS -->
+            <div class="stats">
+              <div class="stat">
+                <h3>120+</h3>
+                <p>Events Hosted</p>
+              </div>
 
-                <!-- HERO BUTTONS -->
-                <div class="hero-btn">
-                    <a href="events.html" class="explore-events">Explore Events</a>
-                    <a href="signup.html" class="get-started">Get Started</a>
+              <div class="stat">
+                <h3>40+</h3>
+                <p>Active Clubs</p>
+              </div>
+
+              <div class="stat">
+                <h3>5,000+</h3>
+                <p>Students Connected</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- HERO IMAGE -->
+          <div class="hero-img">
+            <img src="../assets/img/heroimg.jpg" alt="hero image" />
+          </div>
+        </div>
+      </section>
+
+      <!-- UPCOMING EVENTS SECTION  -->
+
+      <section class="upcoming-events">
+        <!-- UPCOMING EVENTS CONTENT (HEADING , PARAGRAPH , BUTTON)  -->
+        <div class="upcoming-events-content">
+          <h2>Upcoming Events</h2>
+          <p>Don't miss what's happening on campus this week</p>
+        </div>
+
+        <!-- CARD SECTIONS -->
+        <div class="upcoming-events-card">
+          <!-- CARD 1 -->
+          <div class="cards">
+            <!-- IMG OF CARD 1 -->
+            <div class="cards-img">
+              <img
+                src="../assets/img/card1.jpg"
+                alt="hackathon card image of upcoming events"
+              />
+            </div>
+
+            <!-- CONTENT INSIDE CARD -->
+            <div class="cards-content">
+              <div class="cards-badge">
+                <span class="events-type-badge">Hackathon</span>
+                <span class="events-clubs">Coding Club</span>
+              </div>
+
+              <div class="cards-title">
+                <h3>CodeStorm 24hr Hackathon</h3>
+              </div>
+
+              <!-- CARDS INFO DATE , VENUE , ELIGIBLITY  -->
+              <div class="cards-info">
+                <div class="card-date">
+                  <i class="fa-solid fa-calendar"></i> 24/8/26 , 12:00 PM
+                </div>
+                <div class="card-venue">
+                  <i class="fa-solid fa-location-dot"></i> Main Auditorium
+                </div>
+                <div class="card-eligibility">
+                  <i class="fa-solid fa-user-group"></i> Students Only
+                </div>
+              </div>
+
+              <div class="card-divider"></div>
+
+              <div class="cards-seat-status">
+                <p><i class="fa-solid fa-ticket"></i> 24 seats left</p>
+              </div>
+
+              <div class="cards-button">
+                <a href="#" class="view-detail-btn">View Details</a>
+                <a href="#" class="cards-register-btn">Regisiter</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="cards">
+            <div class="cards-img">
+              <img src="../assets/img/card2.jpg" alt="AI workshop event" />
+            </div>
+
+            <div class="cards-content">
+              <div class="cards-badge">
+                <span class="events-type-badge">Workshop</span>
+                <span class="events-clubs">AI Club</span>
+              </div>
+
+              <div class="cards-title">
+                <h3>AI & Machine Learning Bootcamp</h3>
+              </div>
+
+              <div class="cards-info">
+                <div class="card-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  28/08/26, 10:00 AM
                 </div>
 
-                <!-- HERO STATS -->
-                 <div class="stats">
-                    <div class="stat">
-                        <h3>120+</h3>
-                        <p>Events Hosted</p>
-                    </div>
+                <div class="card-venue">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Seminar Hall
+                </div>
 
-                    <div class="stat">
-                        <h3>40+</h3>
-                        <p>Active Clubs</p>
-                    </div>
+                <div class="card-eligibility">
+                  <i class="fa-solid fa-user-group"></i>
+                  Students & Teachers
+                </div>
+              </div>
 
-                    <div class="stat">
-                        <h3>5,000+</h3>
-                        <p>Students Connected</p>
-                    </div>
-                 </div>
-                 </div>
+              <div class="card-divider"></div>
 
-                 <!-- HERO IMAGE -->
-                 <div class="hero-img">
-                    <img src="../assets/img/heroimg.jpg" alt="hero image">
-                 </div>
+              <div class="cards-seat-status">
+                <p><i class="fa-solid fa-ticket"></i> 48 seats left</p>
+              </div>
 
+              <div class="cards-button">
+                <a href="#" class="view-detail-btn">View Details</a>
+                <a href="#" class="cards-register-btn">Register</a>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="cards">
+            <div class="cards-img">
+              <img src="../assets/img/card3.jpg" alt="Cultural fest" />
+            </div>
+
+            <div class="cards-content">
+              <div class="cards-badge">
+                <span class="events-type-badge">Cultural</span>
+                <span class="events-clubs">Drama Club</span>
+              </div>
+
+              <div class="cards-title">
+                <h3>Campus Cultural Fest 2026</h3>
+              </div>
+
+              <div class="cards-info">
+                <div class="card-date">
+                  <i class="fa-solid fa-calendar"></i>
+                  30/08/26, 6:00 PM
+                </div>
+
+                <div class="card-venue">
+                  <i class="fa-solid fa-location-dot"></i>
+                  Open Air Theatre
+                </div>
+
+                <div class="card-eligibility">
+                  <i class="fa-solid fa-user-group"></i>
+                  Everyone
+                </div>
+              </div>
+
+              <div class="card-divider"></div>
+
+              <div class="cards-seat-status">
+                <p><i class="fa-solid fa-ticket"></i> 120 seats left</p>
+              </div>
+
+              <div class="cards-button">
+                <a href="#" class="view-detail-btn">View Details</a>
+                <a href="#" class="cards-register-btn">Register</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-container">
+          <a href="events.html" class="view-all-btn">
+            View All Events
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </section>
     </main>
 
     <script src="/Campus-Connect/js/home.js"></script>
-</body>
+  </body>
 </html>
