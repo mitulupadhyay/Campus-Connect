@@ -360,3 +360,273 @@ body{
         margin:0 auto 35px;
     }
 }
+
+
+/* UPCOMING EVENTS SECTION CSS */
+.upcoming-events{
+    background-color: #F8FAFC;
+    padding: 80px 0;
+}
+.upcoming-events-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+.upcoming-events-content h2{
+    color: rgba(0, 0, 0,0.8);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.upcoming-events-content p{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.upcoming-events-card{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:50px auto 0;
+    padding:0 20px;
+}
+
+.cards{
+    background-color: white;
+    padding: 0px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+    width: 100%;
+    min-height: 500px;
+}
+.cards:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15,23,42,0.12);
+    
+}
+.cards-img img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius:15px 15px;
+}
+.cards-content{
+    padding: 20px;
+}
+.cards-badge{
+    display: flex;
+    gap: 15px;
+}
+.events-type-badge{
+    background-color: #DBEAFE;
+    color: #2563EB;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+}
+.events-clubs{
+    background-color: #F1F5F9;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+}
+.cards-title{
+    color: rgba(0, 0, 0,0.9);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+.cards-title h3{
+    font-size:24px;
+    color:#1E293B;
+    margin:18px 0;
+    line-height:1.4;
+}  
+.cards-info{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    color:#64748B;
+}
+.cards-info i{
+    color: #F90000;
+}
+.card-divider{
+    height: 1px;
+    background-color: #b2bfcf;
+    margin: 20px 0;
+}
+.cards-seat-status{
+    margin-top:18px;
+    margin-bottom:20px;
+    color:#EF4444;
+    font-weight:600;
+}
+.cards-seat-status i{
+    color:#F90000;
+}
+.cards-button{
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+.view-detail-btn,
+.cards-register-btn{
+    padding: 10px 0;
+    font-size: 15px;
+}
+.view-detail-btn{
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+
+    padding: 12px 0;
+
+    background-color: white;
+    color: #334155;
+
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+.view-detail-btn:hover{
+    background-color: #F1F5F9;
+    color: #1E293B;
+}
+.cards-register-btn{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+
+    padding:12px 0;
+
+    background-color:#EF4444;
+    color:white;
+
+    border-radius:10px;
+    border:none;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+}
+
+.cards-register-btn:hover{
+    background-color:#DC2626;
+    color:white;
+}
+.view-all-btn{
+    color: #F90000;
+    background-color: #1E293B;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 253, 253) ;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+}
+.view-all-btn:hover{
+    background-color:#1E293B;
+    color: #F90000;
+    border-radius: 100px;
+}
+.view-all-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.view-all-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    background-color: #1E293B;
+    color: white;
+
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+
+    transition: all .3s ease;
+}
+
+.view-all-btn:hover{
+    background-color: #334155;
+    transform: translateY(-3px);
+}
+
+.view-all-btn i{
+    transition: transform .3s ease;
+}
+
+.view-all-btn:hover i{
+    transform: translateX(5px);
+}
+
+/* TABLET */
+@media (max-width: 992px){
+
+    .upcoming-events{
+        padding: 60px 0;
+    }
+
+    .upcoming-events-content h2{
+        font-size: 28px;
+    }
+
+    .upcoming-events-content p{
+        font-size: 15px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+}
+/* MOBILE */
+@media (max-width: 576px){
+
+    .upcoming-events{
+        padding: 40px 0;
+    }
+
+    .upcoming-events-content h2{
+        font-size: 24px;
+    }
+
+    .cards-content{
+        padding: 16px;
+    }
+
+    .cards-title h3{
+        font-size: 20px;
+    }
+
+    .cards-button{
+        flex-direction: column;
+    }
+
+    .view-detail-btn,
+    .cards-register-btn{
+        width: 100%;
+    }
+
+}
