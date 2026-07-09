@@ -1,0 +1,25 @@
+{
+  "name": "campus-connect",
+  "version": "1.0.0",
+  "description": "CampusConnect — A smart campus engagement platform that personalizes event discovery, streamlines event management, and connects students with opportunities that match their interests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitulupadhyay/Campus-Connect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mitulupadhyay/Campus-Connect/issues"
+  },
+  "homepage": "https://github.com/mitulupadhyay/Campus-Connect#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "tailwindcss": "^4.3.2"
+  }
+}
