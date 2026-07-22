@@ -1,0 +1,232 @@
+   /* ================================
+      SHARED EXTENDABLE PRIMITIVES
+      (defined via @utility so other
+      components/files can @apply them)
+      ================================ */
+
+@utility badge-blue {
+    @apply inline-flex items-center justify-center
+    px-3 py-1
+    rounded-full
+    bg-blue-100
+    text-blue-600
+    text-xs
+    font-semibold;
+}
+
+@utility badge-gray {
+    @apply inline-flex items-center justify-center
+    px-3 py-1
+    rounded-full
+    bg-slate-100
+    text-slate-600
+    text-xs
+    font-semibold;
+}
+
+@utility icon-circle {
+    @apply flex items-center justify-center
+    rounded-full
+    shrink-0;
+}
+
+
+@layer components {
+
+       /* Primary Button */
+
+.btn-primary{
+        @apply inline-flex items-center justify-center
+        px-4 py-2
+        rounded-md
+        border border-primary
+        bg-primary
+        text-white
+        font-medium
+        transition-all
+        duration-300
+        ease-out;
+    }
+
+.btn-primary:hover{
+        @apply bg-transparent
+        text-primary
+        border-primary
+        rounded-[999px];
+    }
+
+
+       /* Secondary Button */
+
+.btn-secondary{
+        @apply inline-flex items-center justify-center
+        px-4 py-2
+        rounded-md
+        border
+        border-white
+        bg-transparent
+        text-white
+        font-medium
+        transition-all
+        duration-300
+        ease-out;
+    }
+
+.btn-secondary:hover{
+        @apply bg-primary
+        border-primary
+        rounded-[999px];
+    }
+
+
+.btn-secondary-dark{
+    @apply inline-flex items-center justify-center
+    px-4 py-2
+    rounded-md
+    border border-secondary
+    text-secondary
+    bg-transparent
+    font-medium
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.btn-secondary-dark:hover{
+    @apply bg-secondary
+    text-white
+    rounded-[999px];
+}
+
+
+       /* CTA Buttons */
+
+.btn-cta-primary{
+    @apply inline-flex items-center justify-center
+    px-8 py-3.5
+    rounded-[10px]
+    bg-primary
+    text-white
+    font-semibold
+    shadow-md
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.btn-cta-primary:hover{
+    @apply bg-transparent
+    border border-primary
+    text-primary
+    shadow-lg
+    -translate-y-1;
+}
+
+.btn-cta-secondary{
+    @apply inline-flex items-center justify-center
+    px-8 py-3.5
+    rounded-[10px]
+    border-2 border-white
+    text-white
+    font-semibold
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.btn-cta-secondary:hover{
+    @apply bg-white
+    text-secondary
+    -translate-y-1;
+}
+
+
+       /* Icon Button (button + trailing/leading icon pattern) */
+
+.btn-view-all{
+    @apply inline-flex items-center gap-2.5
+    px-7 py-3.5
+    rounded-[10px]
+    bg-secondary
+    text-white
+    font-semibold
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.btn-view-all:hover{
+    @apply bg-secondary-hover
+    text-primary
+    -translate-y-1;
+}
+
+.btn-view-all i{
+    @apply transition-transform duration-300;
+}
+
+.btn-view-all:hover i{
+    @apply translate-x-1.5;
+}
+
+
+   /* Badges */
+
+.hero-badge{
+    @apply inline-flex items-center gap-2
+    px-3 py-1
+    rounded-full
+    border border-primary
+    bg-primary/15
+    text-primary
+    text-sm
+    font-semibold;
+}
+
+.hero-badge i{
+    @apply text-lg text-primary;
+}
+
+
+   /* Typography */
+
+.section-title{
+    @apply text-3xl mb-4 md:text-4xl
+    font-bold
+    text-heading;
+}
+
+.section-description{
+    @apply text-base
+    font-medium
+    text-muted;
+}
+
+.page-title{
+    @apply text-4xl md:text-5xl
+    font-bold
+    leading-tight
+    text-heading;
+}
+
+.page-description{
+    @apply text-lg
+    text-muted
+    leading-relaxed;
+}
+
+.hero-title{
+    @apply text-4xl md:text-5xl lg:text-6xl
+    font-bold
+    text-white
+    leading-tight;
+}
+
+.hero-description{
+    @apply max-w-xl
+    text-white/80
+    text-base md:text-lg
+    leading-relaxed;
+}
+
+}

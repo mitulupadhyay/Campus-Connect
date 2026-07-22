@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../assets/img/logo.png" type="image/png" />
     <title>Campus Connect</title>
-    <link rel="stylesheet" href="css/home.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link href="../dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="../dist/output.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body class="pt-[50px]">
     <!-- NAVBAR -->
 
     <header>
       <nav class="navbar">
-        <div class="container">
+        <div class="navbar-container">
           <!-- WEBSITE LOGO -->
           <div class="web-logo">
             <a href="home.html">
@@ -60,15 +66,15 @@
             </ul>
 
             <div class="mobile-auth">
-              <a href="signin.html" id="mobile-sign-in">Sign In</a>
-              <a href="signup.html" id="mobile-sign-up">Sign Up</a>
+              <a href="signin.html" id="mobile-sign-in" class="btn-secondary w-full justify-center py-3">Sign In</a>
+              <a href="signup.html" id="mobile-sign-up" class="btn-primary w-full justify-center py-3">Sign Up</a>
             </div>
           </div>
 
           <!-- AUTH BUTTONS -->
           <div class="auth-btn">
-            <a href="signin.html" id="sign-in">Sign In</a>
-            <a href="signup.html" id="sign-up">Sign Up</a>
+            <a href="signin.html" class="btn-secondary" id="sign-in">Sign In</a>
+            <a href="signup.html" class="btn-primary" id="sign-up">Sign Up</a>
           </div>
 
           <!-- MOBILE MENU -->
@@ -87,16 +93,16 @@
             <span class="hero-badge"
               ><i class="fa-solid fa-tag"></i> Your campus, one place</span
             >
-            <h1>Discover, Join and Manage Every Campus Event</h1>
-            <p class="hero-content-paragraph">
+            <h1 class="hero-title my-5">Discover, Join and Manage Every Campus Event</h1>
+            <p class="hero-description mb-9">
               CampusConnect brings all your college events, clubs and
               opportunities together — so you never miss out on what matters.
             </p>
 
             <!-- HERO BUTTONS -->
             <div class="hero-btn">
-              <a href="events.html" class="explore-events">Explore Events</a>
-              <a href="signup.html" class="get-started">Get Started</a>
+              <a href="events.html" class="btn-cta-primary">Explore Events</a>
+              <a href="signup.html" class="btn-cta-secondary">Get Started</a>
             </div>
 
             <!-- HERO STATS -->
@@ -130,16 +136,16 @@
       <section class="upcoming-events">
         <!-- UPCOMING EVENTS CONTENT (HEADING , PARAGRAPH , BUTTON)  -->
         <div class="upcoming-events-content">
-          <h2>Upcoming Events</h2>
-          <p>Don't miss what's happening on campus this week</p>
+          <h2 class="section-title">Upcoming Events</h2>
+          <p class="section-description">Don't miss what's happening on campus this week</p>
         </div>
 
         <!-- CARD SECTIONS -->
-        <div class="upcoming-events-card">
+        <div class="upcoming-events-grid">
           <!-- CARD 1 -->
-          <div class="cards">
+          <div class="event-card">
             <!-- IMG OF CARD 1 -->
-            <div class="cards-img">
+            <div class="card-image">
               <img
                 src="../assets/img/card1.jpg"
                 alt="hackathon card image of upcoming events"
@@ -147,18 +153,16 @@
             </div>
 
             <!-- CONTENT INSIDE CARD -->
-            <div class="cards-content">
-              <div class="cards-badge">
-                <span class="events-type-badge">Hackathon</span>
-                <span class="events-clubs">Coding Club</span>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Hackathon</span>
+                <span class="badge-gray">Coding Club</span>
               </div>
 
-              <div class="cards-title">
-                <h3>CodeStorm 24hr Hackathon</h3>
-              </div>
+              <h3>CodeStorm 24hr Hackathon</h3>
 
               <!-- CARDS INFO DATE , VENUE , ELIGIBLITY  -->
-              <div class="cards-info">
+              <div class="card-info">
                 <div class="card-date">
                   <i class="fa-solid fa-calendar"></i> 24/8/26 , 12:00 PM
                 </div>
@@ -172,34 +176,32 @@
 
               <div class="card-divider"></div>
 
-              <div class="cards-seat-status">
+              <div class="seat-status">
                 <p><i class="fa-solid fa-ticket"></i> 24 seats left</p>
               </div>
 
-              <div class="cards-button">
-                <a href="#" class="view-detail-btn">View Details</a>
-                <a href="#" class="cards-register-btn">Regisiter</a>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Regisiter</a>
               </div>
             </div>
           </div>
 
           <!-- CARD 2 -->
-          <div class="cards">
-            <div class="cards-img">
+          <div class="event-card">
+            <div class="card-image">
               <img src="../assets/img/card2.jpg" alt="AI workshop event" />
             </div>
 
-            <div class="cards-content">
-              <div class="cards-badge">
-                <span class="events-type-badge">Workshop</span>
-                <span class="events-clubs">AI Club</span>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Workshop</span>
+                <span class="badge-gray">AI Club</span>
               </div>
 
-              <div class="cards-title">
-                <h3>AI & Machine Learning Bootcamp</h3>
-              </div>
+              <h3>AI & Machine Learning Bootcamp</h3>
 
-              <div class="cards-info">
+              <div class="card-info">
                 <div class="card-date">
                   <i class="fa-solid fa-calendar"></i>
                   28/08/26, 10:00 AM
@@ -218,34 +220,32 @@
 
               <div class="card-divider"></div>
 
-              <div class="cards-seat-status">
+              <div class="seat-status">
                 <p><i class="fa-solid fa-ticket"></i> 48 seats left</p>
               </div>
 
-              <div class="cards-button">
-                <a href="#" class="view-detail-btn">View Details</a>
-                <a href="#" class="cards-register-btn">Register</a>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
               </div>
             </div>
           </div>
 
           <!-- CARD 3 -->
-          <div class="cards">
-            <div class="cards-img">
+          <div class="event-card">
+            <div class="card-image">
               <img src="../assets/img/card3.jpg" alt="Cultural fest" />
             </div>
 
-            <div class="cards-content">
-              <div class="cards-badge">
-                <span class="events-type-badge">Cultural</span>
-                <span class="events-clubs">Drama Club</span>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Cultural</span>
+                <span class="badge-gray">Drama Club</span>
               </div>
 
-              <div class="cards-title">
-                <h3>Campus Cultural Fest 2026</h3>
-              </div>
+              <h3>Campus Cultural Fest 2026</h3>
 
-              <div class="cards-info">
+              <div class="card-info">
                 <div class="card-date">
                   <i class="fa-solid fa-calendar"></i>
                   30/08/26, 6:00 PM
@@ -264,19 +264,19 @@
 
               <div class="card-divider"></div>
 
-              <div class="cards-seat-status">
+              <div class="seat-status">
                 <p><i class="fa-solid fa-ticket"></i> 120 seats left</p>
               </div>
 
-              <div class="cards-button">
-                <a href="#" class="view-detail-btn">View Details</a>
-                <a href="#" class="cards-register-btn">Register</a>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
               </div>
             </div>
           </div>
         </div>
         <div class="view-all-container">
-          <a href="events.html" class="view-all-btn">
+          <a href="events.html" class="btn-view-all">
             View All Events
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -287,8 +287,8 @@
       <section class="popular-clubs">
         <!-- CARD 1  -->
         <div class="popular-clubs-content">
-          <h2>Popular Clubs</h2>
-          <p>Join a community that matches your interest</p>
+          <h2 class="section-title">Popular Clubs</h2>
+          <p class="section-description">Join a community that matches your interest</p>
         </div>
 
         <div class="popular-clubs-grid">
@@ -307,15 +307,15 @@
               <div class="club-divider"></div>
 
               <div class="club-stats">
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-users"></i><span> 425 Members</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-calendar"></i><span> 18 Events</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-star"></i><span> 4.9/5 Rating</span>
                 </div>
               </div>
@@ -348,17 +348,17 @@
               <div class="club-divider"></div>
 
               <div class="club-stats">
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-users"></i>
                   <span>310 Members</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-calendar"></i>
                   <span>14 Events</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-star"></i>
                   <span>4.8/5 Rating</span>
                 </div>
@@ -393,17 +393,17 @@
               <div class="club-divider"></div>
 
               <div class="club-stats">
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-users"></i>
                   <span>275 Members</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-calendar"></i>
                   <span>12 Events</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-star"></i>
                   <span>4.7/5 Rating</span>
                 </div>
@@ -438,17 +438,17 @@
               <div class="club-divider"></div>
 
               <div class="club-stats">
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-users"></i>
                   <span>390 Members</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-calendar"></i>
                   <span>22 Events</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-star"></i>
                   <span>4.9/5 Rating</span>
                 </div>
@@ -483,17 +483,17 @@
               <div class="club-divider"></div>
 
               <div class="club-stats">
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-users"></i>
                   <span>285 Members</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-calendar"></i>
                   <span>16 Events</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-star"></i>
                   <span>4.8/5 Rating</span>
                 </div>
@@ -528,17 +528,17 @@
               <div class="club-divider"></div>
 
               <div class="club-stats">
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-users"></i>
                   <span>340 Members</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-calendar"></i>
                   <span>20 Events</span>
                 </div>
 
-                <div class="clubs-stats">
+                <div class="club-stat">
                   <i class="fa-solid fa-star"></i>
                   <span>4.9/5 Rating</span>
                 </div>
@@ -559,7 +559,7 @@
           </div>
         </div>
         <div class="view-all-container">
-          <a href="clubs.html" class="view-all-btn">
+          <a href="clubs.html" class="btn-view-all">
             View All Clubs
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -570,8 +570,8 @@
 
       <section class="feature">
         <div class="feature-content">
-          <h2>Why Campus Connect?</h2>
-          <p>
+          <h2 class="section-title">Why Campus Connect?</h2>
+          <p class="section-description">
             Everything scattered across WhatsApp groups and notice boards, now
             in one place.
           </p>
@@ -649,8 +649,8 @@
 
       <section class="testimonials">
         <div class="testimonials-content">
-          <h2>What Students Say</h2>
-          <p>
+          <h2 class="section-title">What Students Say</h2>
+          <p class="section-description">
             Hear how CampusConnect makes discovering and managing campus events
             easier.
           </p>
@@ -708,7 +708,7 @@
             </div>
           </div>
 
-          <!-- ===== Card 3 ===== -->
+          <!-- === Card 3 === -->
           <div class="testimonial-card">
             <div class="testimonial-rating">
               <i class="fa-solid fa-star"></i>
@@ -747,9 +747,9 @@
           </p>
 
           <div class="cta-buttons">
-            <a href="#" class="cta-primary-btn"> Explore Events </a>
+            <a href="#" class="btn-cta-primary"> Explore Events </a>
 
-            <a href="#" class="cta-secondary-btn"> Organize an Event </a>
+            <a href="#" class="btn-cta-secondary"> Organize an Event </a>
           </div>
         </div>
       </section>
@@ -770,7 +770,7 @@
             A smart campus engagement platform that helps students discover
             opportunities and clubs manage events efficiently.
           </p>
-          
+
           <div class="footer-social">
             <a href="#">
               <i class="fa-brands fa-github"></i>

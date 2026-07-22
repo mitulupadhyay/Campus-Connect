@@ -1,0 +1,96 @@
+   /* THEME */
+
+@theme {
+
+    /*  Colors  */
+
+    --color-primary: #FF2600;
+    --color-primary-hover: #DC2626;
+
+    --color-secondary: #1E293B;
+    --color-secondary-hover: #334155;
+
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+
+    --color-heading: #1E293B;
+    --color-muted: #64748B;
+
+    --color-border: #E2E8F0;
+
+    --color-success: #22C55E;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+
+    /* Font */
+
+    --font-sans: "Inter", sans-serif;
+}
+
+
+@layer base {
+
+   /* RESET */
+
+*,
+*::before,
+*::after{
+    @apply box-border m-0 p-0;
+}
+
+
+   /* GLOBAL */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    @apply bg-background text-heading font-sans antialiased;
+}
+
+
+   /* ELEMENTS */
+
+a{
+    @apply no-underline text-inherit;
+}
+
+ul,
+ol{
+    @apply list-none;
+}
+
+button{
+    @apply cursor-pointer border-none bg-transparent;
+}
+
+input,
+textarea,
+select{
+    @apply outline-none;
+}
+
+img{
+    @apply block max-w-full h-auto;
+}
+
+
+   /* LAYOUT */
+
+.container{
+    @apply max-w-7xl mx-auto px-6;
+}
+
+.section{
+    @apply py-20;
+}
+
+
+   /* SELECTION */
+
+::selection{
+    @apply bg-primary text-white;
+}
+
+}

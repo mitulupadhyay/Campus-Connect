@@ -1,0 +1,134 @@
+@layer components {
+
+   /* ===== FOOTER ===== */
+
+.footer{
+    @apply bg-secondary
+    text-white
+    px-5 pt-[70px] pb-[25px];
+}
+
+.footer-container{
+    @apply max-w-[1200px]
+    mx-auto
+    grid
+    gap-10;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+}
+
+.footer-logo{
+    @apply inline-flex items-center gap-2.5
+    text-white
+    text-[28px] font-bold
+    mb-[18px];
+}
+
+.footer-logo i,
+.footer-logo span{
+    @apply text-primary;
+}
+
+.footer-brand p{
+    @apply text-slate-300
+    leading-relaxed
+    max-w-[320px];
+}
+
+.footer-social{
+    @apply flex gap-[15px] mt-[25px];
+}
+
+.footer-social a{
+    @apply icon-circle
+    w-[42px] h-[42px]
+    bg-white/[.08]
+    text-slate-300
+    transition-all duration-300 ease-out;
+}
+
+.footer-social a:hover{
+    @apply bg-primary
+    text-white
+    -translate-y-1;
+}
+
+.footer-social i{
+    @apply text-lg;
+}
+
+.footer-links h3,
+.footer-contact h3{
+    @apply text-xl mb-[18px];
+}
+
+.footer-links{
+    @apply flex flex-col gap-3;
+}
+
+.footer-links a{
+    @apply inline-block
+    text-slate-300
+    transition-all duration-300 ease-out;
+}
+
+.footer-links a:hover{
+    @apply text-primary
+    translate-x-1;
+}
+
+.footer-contact{
+    @apply flex flex-col gap-4;
+}
+
+.footer-contact p{
+    @apply flex gap-3
+    text-slate-300
+    leading-relaxed;
+}
+
+.footer-contact i{
+    @apply text-primary mt-1;
+}
+
+.footer-bottom{
+    @apply border-t border-white/[.12]
+    mt-[50px] pt-[25px]
+    text-center;
+}
+
+.footer-bottom p{
+    @apply text-slate-400 text-[15px];
+}
+
+@media (max-width: 992px){
+
+    .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 576px){
+
+    .footer{
+        @apply pt-[50px] pb-5;
+    }
+
+    .footer-container{
+        @apply text-center;
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand p{
+        @apply max-w-none;
+    }
+
+    .footer-logo,
+    .footer-contact p,
+    .footer-social{
+        @apply justify-center;
+    }
+
+}
+
+}

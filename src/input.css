@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@import "./css/base.css";
+@import "./css/components.css";
+@import "./css/card.css";
+@import "./css/navbar.css";
+@import "./css/footer.css";
+@import "./css/landing.css";

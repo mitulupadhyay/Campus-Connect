@@ -1,0 +1,314 @@
+   /* ================================
+      CARD — extendable base pieces
+      ================================ */
+
+@utility card {
+    @apply bg-surface
+    rounded-2xl
+    shadow-lg
+    overflow-hidden
+    w-full
+    transition-all
+    duration-300
+    ease-out;
+}
+
+@utility card-title {
+    @apply text-xl
+    font-semibold
+    text-heading
+    leading-snug;
+}
+
+@utility card-divider {
+    @apply h-px
+    bg-border
+    my-4;
+}
+
+
+@layer components {
+
+       /* ===== CARD (base) ===== */
+
+.card:hover{
+        @apply -translate-y-1.5 shadow-xl;
+    }
+
+.card-image{
+        @apply overflow-hidden;
+    }
+
+.card-image img{
+        @apply w-full h-44 object-cover
+        transition-transform
+        duration-500
+        ease-out;
+    }
+
+.card:hover .card-image img{
+        @apply scale-[1.06];
+    }
+
+.card-badges{
+        @apply flex gap-3.5;
+    }
+
+.card-body{
+        @apply p-5;
+    }
+
+.card-body h3{
+        @apply card-title my-[18px];
+    }
+
+.card-info{
+        @apply flex flex-col
+        gap-3
+        text-sm
+        text-muted;
+    }
+
+.card-info i{
+        @apply text-primary;
+    }
+
+.card-footer{
+        @apply mt-4;
+    }
+
+.card-actions{
+        @apply flex
+        gap-3
+        mt-5;
+    }
+
+.btn-outline{
+        @apply flex-1 inline-flex items-center justify-center
+        text-center
+        px-4 py-3
+        rounded-[10px]
+        border border-border
+        bg-surface
+        text-secondary-hover
+        font-semibold
+        text-sm
+        transition-all
+        duration-300
+        ease-out;
+    }
+
+.btn-outline:hover{
+        @apply bg-blue-100
+        text-secondary;
+    }
+
+.btn-solid{
+        @apply flex-1 inline-flex items-center justify-center
+        text-center
+        px-4 py-3
+        rounded-[10px]
+        bg-primary
+        text-white
+        font-semibold
+        text-sm
+        transition-all
+        duration-300
+        ease-out;
+    }
+
+.btn-solid:hover{
+        @apply bg-primary-hover;
+    }
+
+.seat-status{
+        @apply flex items-center gap-2
+        my-3.5
+        text-sm
+        font-semibold
+        text-heading/80;
+    }
+
+.seat-status i{
+        @apply text-primary;
+    }
+
+
+       /* ===== EVENT CARD ===== */
+
+.event-card{
+        @apply card min-h-[450px];
+    }
+
+.event-type-badge{
+        @apply badge-blue;
+    }
+
+
+       /* ===== CLUB CARD ===== */
+
+.club-card{
+        @apply card p-7;
+    }
+
+.club-logo{
+        @apply icon-circle
+        w-15 h-15
+        bg-blue-100
+        text-blue-600
+        text-3xl
+        mx-auto
+        mb-5
+        transition-transform
+        duration-300
+        ease-out;
+    }
+
+.club-card:hover .club-logo{
+        @apply scale-110;
+    }
+
+.club-category{
+        @apply badge-blue;
+    }
+
+.club-info{
+        @apply text-center;
+    }
+
+.club-info h3{
+        @apply card-title mb-2;
+    }
+
+.club-description{
+        @apply text-sm
+        text-muted
+        mb-4;
+    }
+
+.club-divider{
+        @apply card-divider;
+    }
+
+.club-stats{
+        @apply flex items-center justify-center
+        gap-4
+        mb-4;
+    }
+
+.club-stat{
+        @apply flex items-center gap-1.5
+        text-xs
+        text-muted;
+    }
+
+.club-stat i{
+        @apply text-primary;
+    }
+
+.club-tags{
+        @apply flex flex-wrap items-center justify-center
+        gap-2
+        mb-5;
+    }
+
+.club-tags span{
+        @apply badge-gray;
+    }
+
+.club-btn{
+        @apply inline-flex items-center gap-2
+        text-primary
+        font-semibold
+        text-sm
+        transition-all
+        duration-300
+        ease-out;
+    }
+
+.club-btn:hover{
+        @apply gap-3;
+    }
+
+
+       /* ===== FEATURE CARD ===== */
+
+.feature-card{
+        @apply card
+        p-7
+        text-center
+        grid
+        gap-2;
+    }
+
+.feature-icon{
+        @apply icon-circle
+        w-12 h-12
+        mx-auto mb-4
+        bg-red-100
+        text-primary
+        text-xl
+        transition-transform
+        duration-300
+        ease-out;
+    }
+
+.feature-card:hover .feature-icon{
+        @apply scale-110;
+    }
+
+
+       /* ===== TESTIMONIAL CARD ===== */
+
+.testimonial-card{
+        @apply card p-8;
+    }
+
+.testimonial-rating{
+        @apply flex gap-1
+        mb-4.5;
+    }
+
+.testimonial-rating i{
+        @apply text-warning text-sm;
+    }
+
+.testimonial-review{
+        @apply text-slate-600
+        leading-relaxed
+        italic
+        mb-7;
+    }
+
+.testimonial-user{
+        @apply flex items-center gap-4;
+    }
+
+.testimonial-avatar{
+        @apply icon-circle
+        w-14 h-14
+        bg-blue-100
+        text-blue-600
+        text-xl
+        font-bold
+        transition-transform
+        duration-300
+        ease-out;
+    }
+
+.testimonial-card:hover .testimonial-avatar{
+        @apply scale-105;
+    }
+
+.testimonial-info h4{
+        @apply text-heading
+        text-lg
+        mb-1;
+    }
+
+.testimonial-info p{
+        @apply text-muted
+        text-sm;
+    }
+
+}

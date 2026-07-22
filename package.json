@@ -4,6 +4,8 @@
   "description": "CampusConnect — A smart campus engagement platform that personalizes event discovery, streamlines event management, and connects students with opportunities that match their interests",
   "main": "index.js",
   "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./frontend/dist/output.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./frontend/dist/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

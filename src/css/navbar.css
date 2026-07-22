@@ -1,0 +1,157 @@
+@layer components {
+
+   /* NAVBAR */
+
+.navbar{
+    @apply fixed top-0 left-0 w-full z-[1000]
+    bg-secondary;
+}
+
+.navbar-container{
+    @apply flex items-center justify-between
+    max-w-[1400px] w-full h-[70px]
+    mx-auto
+    px-[30px];
+}
+
+
+   /* LOGO */
+
+.web-logo{
+    @apply flex-[1.3];
+}
+
+.web-logo a{
+    @apply flex items-center gap-2.5
+    text-2xl font-bold
+    text-white;
+}
+
+.web-logo i{
+    @apply text-primary text-[26px];
+}
+
+.web-logo span{
+    @apply text-primary;
+}
+
+
+   /* NAVIGATION LINKS */
+
+.nav-links{
+    @apply flex-[2] flex items-center justify-center;
+}
+
+.nav-links ul{
+    @apply flex items-center gap-10;
+}
+
+.nav-links a{
+    @apply inline-flex items-center gap-2
+    whitespace-nowrap
+    text-white text-base font-semibold
+    px-[15px] py-2.5
+    rounded-full
+    transition-all duration-300 ease-out;
+}
+
+.nav-links a:hover{
+    @apply bg-primary/80
+    -translate-y-0.5;
+}
+
+.nav-links a.active{
+    @apply bg-primary/80;
+}
+
+.nav-links i{
+    @apply text-white;
+}
+
+.mobile-auth{
+    @apply hidden;
+}
+
+
+   /* AUTH BUTTONS */
+
+.auth-btn{
+    @apply flex-[1.3] flex items-center justify-end gap-4;
+}
+
+
+   /* HAMBURGER MENU */
+
+.menu-toggle{
+    @apply hidden
+    text-white text-2xl
+    cursor-pointer;
+}
+
+
+   /* SCROLLED STATE */
+
+.navbar{
+    @apply transition-all duration-300 ease-out;
+}
+
+.navbar.scrolled{
+    @apply bg-secondary/85 backdrop-blur-md shadow-lg shadow-black/10;
+}
+
+
+   /* RESPONSIVE */
+
+@media (max-width: 900px){
+
+    .nav-links ul{
+        @apply gap-2;
+    }
+
+    .nav-links a{
+        @apply px-3;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .navbar-container{
+        @apply px-5;
+    }
+
+    .nav-links{
+        @apply hidden
+        absolute top-[70px] left-0
+        w-full
+        bg-secondary
+        flex-col;
+    }
+
+    .nav-links ul{
+        @apply flex-col gap-0 w-full;
+    }
+
+    .nav-links li{
+        @apply w-full text-center py-[15px];
+    }
+
+    .nav-links.active{
+        @apply flex justify-center;
+    }
+
+    .auth-btn{
+        @apply hidden;
+    }
+
+    .menu-toggle{
+        @apply block ml-auto;
+    }
+
+    .mobile-auth{
+        @apply flex flex-col gap-2.5 p-5;
+    }
+
+}
+
+}
