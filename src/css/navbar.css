@@ -30,6 +30,9 @@
 .web-logo i{
     @apply text-primary text-[26px];
 }
+.web-logo i:hover{
+    @apply rotate-45;
+}
 
 .web-logo span{
     @apply text-primary;
