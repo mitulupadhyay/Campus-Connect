@@ -49,6 +49,9 @@
 .card:hover .card-image img{
         @apply scale-[1.06];
     }
+.card-image img:hover{
+    @apply scale-[1.04];
+}
 
 .card-badges{
         @apply flex gap-3.5;
@@ -137,8 +140,11 @@
        /* ===== EVENT CARD ===== */
 
 .event-card{
-        @apply card min-h-[450px];
+        @apply card min-h-[450px] shadow-lg;
     }
+.event-card:hover{
+    @apply shadow-xl -translate-y-2 scale-[1.01];
+}
 
 .event-type-badge{
         @apply badge-blue;

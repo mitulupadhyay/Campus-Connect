@@ -1,6 +1,6 @@
 @layer components {
 
-   /* ===== HERO SECTION ===== */
+   /*  HERO SECTION  */
 
 .hero{
     @apply bg-secondary;
@@ -10,7 +10,7 @@
     @apply flex items-center gap-5
     max-w-[1200px]
     mx-auto
-    px-[30px] py-20;
+    px-[30px] py-10 pt-30;
 }
 
 .hero-content{
@@ -18,7 +18,7 @@
 }
 
 .hero-btn{
-    @apply flex gap-5 mb-[50px];
+    @apply flex gap-5 mb-[30px];
 }
 
 .stats{
@@ -38,7 +38,7 @@
 }
 
 .stat h3{
-    @apply text-primary text-3xl;
+    @apply text-primary text-3xl font-semibold;
 }
 
 .stat p{
@@ -53,13 +53,14 @@
 
 .hero-img img{
     @apply h-auto w-full max-w-[500px] rounded-[20px]
-    transition-transform
+    transition-all
     duration-500
     ease-out;
 }
 
 .hero-img:hover img{
-    @apply scale-[1.04];
+    @apply scale-[1.04]
+    rounded-lg;
 }
 
 @media (max-width: 768px){
@@ -87,11 +88,11 @@
 }
 
 
-   /* ===== UPCOMING EVENTS SECTION ===== */
+   /* UPCOMING EVENTS SECTION  */
 
 .upcoming-events{
     @apply bg-[#edeef0]
-    py-[60px];
+    py-[40px];
 }
 
 .upcoming-events-content{

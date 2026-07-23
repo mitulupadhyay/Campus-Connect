@@ -11,7 +11,7 @@
     @apply flex items-center justify-between
     max-w-[1400px] w-full h-[70px]
     mx-auto
-    px-[30px];
+    px-[25px];
 }
 
 
@@ -22,16 +22,21 @@
 }
 
 .web-logo a{
-    @apply flex items-center gap-2.5
+    @apply  flex items-center gap-2.5
     text-2xl font-bold
     text-white;
 }
 
 .web-logo i{
-    @apply text-primary text-[26px];
+    @apply text-primary text-[26px] 
+    transition-transform duration-300 ease-out
+    group-hover:-rotate-35;
+}
+.group-hover{
+    @apply -rotate-35;
 }
 .web-logo i:hover{
-    @apply rotate-45;
+    @apply -rotate-35;
 }
 
 .web-logo span{
@@ -46,7 +51,7 @@
 }
 
 .nav-links ul{
-    @apply flex items-center gap-10;
+    @apply flex items-center gap-6;
 }
 
 .nav-links a{
