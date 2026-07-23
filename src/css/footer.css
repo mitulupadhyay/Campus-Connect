@@ -1,6 +1,6 @@
 @layer components {
 
-   /* ===== FOOTER ===== */
+   /*  FOOTER  */
 
 .footer{
     @apply bg-secondary
@@ -27,6 +27,12 @@
 .footer-logo span{
     @apply text-primary;
 }
+.footer-logo i{
+    @apply transition-transform duration-300 ease-out;
+}
+.footer-logo:hover i{
+    @apply -rotate-30;
+}
 
 .footer-brand p{
     @apply text-slate-300
@@ -49,7 +55,8 @@
 .footer-social a:hover{
     @apply bg-primary
     text-white
-    -translate-y-1;
+    -translate-y-1
+    shadow-lg shadow-primary/70;
 }
 
 .footer-social i{
@@ -73,7 +80,7 @@
 
 .footer-links a:hover{
     @apply text-primary
-    translate-x-1;
+    translate-x-2;
 }
 
 .footer-contact{

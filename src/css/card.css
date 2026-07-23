@@ -1,6 +1,4 @@
-   /* ================================
-      CARD — extendable base pieces
-      ================================ */
+       /* CARD @utility  */
 
 @utility card {
     @apply bg-surface
@@ -29,10 +27,10 @@
 
 @layer components {
 
-       /* ===== CARD (base) ===== */
+       /* CARD  */
 
 .card:hover{
-        @apply -translate-y-1.5 shadow-xl;
+        @apply -translate-y-1.5 shadow-sm;
     }
 
 .card-image{
@@ -137,7 +135,7 @@
     }
 
 
-       /* ===== EVENT CARD ===== */
+       /* EVENT CARD */
 
 .event-card{
         @apply card min-h-[450px] shadow-lg;
@@ -151,10 +149,10 @@
     }
 
 
-       /* ===== CLUB CARD ===== */
+       /* CLUB CARD  */
 
 .club-card{
-        @apply card p-7;
+        @apply card p-7 shadow-lg;
     }
 
 .club-logo{
@@ -171,8 +169,11 @@
     }
 
 .club-card:hover .club-logo{
-        @apply scale-110;
+        @apply scale-110 -rotate-30 ;
     }
+.club-card:hover{
+    @apply -translate-y-2 shadow-xl;
+}
 
 .club-category{
         @apply badge-blue;
@@ -237,14 +238,15 @@
     }
 
 
-       /* ===== FEATURE CARD ===== */
+       /*  FEATURE CARD  */
 
 .feature-card{
         @apply card
         p-7
         text-center
         grid
-        gap-2;
+        gap-2
+        shadow-lg;
     }
 
 .feature-icon{
@@ -260,14 +262,17 @@
     }
 
 .feature-card:hover .feature-icon{
-        @apply scale-110;
+        @apply scale-110 -rotate-30;
+    }
+    .feature-card:hover{
+        @apply shadow-xl -translate-y-2;
     }
 
 
-       /* ===== TESTIMONIAL CARD ===== */
+       /* TESTIMONIAL CARD  */
 
 .testimonial-card{
-        @apply card p-8;
+        @apply card p-8 shadow-lg;
     }
 
 .testimonial-rating{
@@ -305,6 +310,9 @@
 .testimonial-card:hover .testimonial-avatar{
         @apply scale-105;
     }
+.testimonial-card:hover{
+    @apply -translate-y-2 shadow-xl;
+}
 
 .testimonial-info h4{
         @apply text-heading

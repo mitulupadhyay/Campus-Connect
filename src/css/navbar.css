@@ -104,7 +104,7 @@
 }
 
 .navbar.scrolled{
-    @apply bg-secondary/85 backdrop-blur-md shadow-lg shadow-black/10;
+    @apply bg-secondary/50 backdrop-blur-xl shadow-lg shadow-black/10;
 }
 
 

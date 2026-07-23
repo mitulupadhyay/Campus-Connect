@@ -1,8 +1,4 @@
-   /* ================================
-      SHARED EXTENDABLE PRIMITIVES
-      (defined via @utility so other
-      components/files can @apply them)
-      ================================ */
+/* COMPONENTS */
 
 @utility badge-blue {
     @apply inline-flex items-center justify-center
@@ -141,7 +137,7 @@
 }
 
 
-       /* Icon Button (button + trailing/leading icon pattern) */
+       /* Icon Button */
 
 .btn-view-all{
     @apply inline-flex items-center gap-2.5

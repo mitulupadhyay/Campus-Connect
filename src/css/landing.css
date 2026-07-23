@@ -138,10 +138,10 @@
 }
 
 
-   /* ===== POPULAR CLUBS SECTION ===== */
+   /*  POPULAR CLUBS SECTION */
 
 .popular-clubs{
-    @apply py-20;
+    @apply py-20 ;
 }
 
 .popular-clubs-content{
@@ -199,7 +199,7 @@
 }
 
 
-   /* ===== FEATURE SECTION ===== */
+   /*  FEATURE SECTION  */
 
 .feature{
     @apply bg-[#edeef0]
@@ -241,7 +241,7 @@
 }
 
 
-   /* ===== TESTIMONIALS SECTION ===== */
+   /*  TESTIMONIALS SECTION  */
 
 .testimonials{
     @apply bg-[#e4e5e5]
@@ -278,7 +278,7 @@
 }
 
 
-   /* ===== CTA SECTION ===== */
+   /*  CTA SECTION  */
 
 .cta{
     @apply bg-[#edeef0]
@@ -292,8 +292,12 @@
     rounded-[20px]
     px-10 py-[70px]
     text-center
-    shadow-2xl
-    shadow-secondary/30;
+    shadow-lg
+    shadow-secondary/30
+    transition-all duration-300;
+}
+.cta-container:hover{
+    @apply shadow-2xl -translate-y-1;
 }
 
 .cta-container h2{
