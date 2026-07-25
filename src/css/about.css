@@ -1,0 +1,264 @@
+@layer components {
+
+   /* ABOUT HERO */
+
+.about-hero .hero-container{
+    @apply flex-col
+    pt-32 pb-16;
+}
+
+.hero-content-center{
+    @apply mx-auto
+    max-w-2xl
+    text-center;
+}
+
+.hero-content-center .hero-btn,
+.hero-content-center .stats{
+    @apply justify-center;
+}
+
+.hero-content-center .hero-description{
+    @apply mx-auto;
+}
+
+.trust-row{
+    @apply flex flex-wrap justify-center
+    gap-3
+    mt-2;
+}
+
+.trust-badge{
+    @apply inline-flex items-center gap-2
+    px-4 py-2
+    rounded-full
+    bg-white/10
+    text-white/85
+    text-sm
+    font-medium;
+}
+
+.trust-badge i{
+    @apply text-primary;
+}
+
+
+   /* MISSION & VISION */
+
+.mission-vision{
+    @apply py-20 px-5;
+}
+
+.mission-vision-grid{
+    @apply grid
+    md:grid-cols-2
+    gap-[30px]
+    max-w-[1000px]
+    mx-auto;
+}
+
+.mission-vision-card{
+    @apply card
+    p-8 md:p-10
+    shadow-lg;
+}
+
+.mission-vision-card:hover{
+    @apply -translate-y-2 shadow-xl;
+}
+
+.mission-vision-icon{
+    @apply icon-circle
+    w-14 h-14
+    mb-5
+    bg-red-100
+    text-primary
+    text-2xl
+    transition-transform
+    duration-300
+    ease-out;
+}
+
+.mission-vision-card:hover .mission-vision-icon{
+    @apply scale-110 -rotate-30;
+}
+
+.mission-vision-card h3{
+    @apply text-xl
+    font-semibold
+    text-heading
+    mb-3;
+}
+
+.mission-vision-card p{
+    @apply text-muted
+    leading-relaxed;
+}
+
+
+   /* STATISTICS */
+
+.about-stats{
+    @apply bg-[#edeef0]
+    py-20 px-5;
+}
+
+.about-stats-content{
+    @apply text-center mb-[50px];
+}
+
+.about-stats-grid{
+    @apply grid
+    gap-[25px]
+    max-w-[1100px]
+    mx-auto;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+
+   /* HOW IT WORKS */
+
+.how-it-works{
+    @apply py-20 px-5;
+}
+
+.how-it-works-content{
+    @apply text-center mb-[50px];
+}
+
+.how-it-works-grid{
+    @apply grid
+    gap-[25px]
+    max-w-[1200px]
+    mx-auto;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+
+   /* STAT CARD (About Stats grid) */
+
+.stat-card{
+    @apply card
+    p-8
+    text-center
+    shadow-lg;
+}
+
+.stat-card:hover{
+    @apply -translate-y-2
+    shadow-xl;
+}
+
+.stat-card h3{
+    @apply text-primary
+    text-4xl
+    font-bold
+    mb-2;
+}
+
+.stat-card p{
+    @apply text-muted
+    font-semibold;
+}
+
+
+   /* STEP NUMBER (How It Works) */
+
+.step-number{
+    @apply icon-circle
+    w-12 h-12
+    mx-auto mb-4
+    bg-primary
+    text-white
+    text-lg
+    font-bold
+    transition-transform
+    duration-300
+    ease-out;
+}
+
+.step-card:hover .step-number{
+    @apply scale-110;
+}
+
+
+   /* FAQ */
+
+.faq{
+    @apply bg-[#edeef0]
+    py-20 px-5;
+}
+
+.faq-content{
+    @apply text-center mb-[50px];
+}
+
+.faq-list{
+    @apply flex flex-col
+    gap-4
+    max-w-[760px]
+    mx-auto;
+}
+
+.faq-item{
+    @apply card
+    shadow-md;
+}
+
+.faq-item:hover{
+    @apply shadow-lg;
+}
+
+.faq-question{
+    @apply flex items-center justify-between
+    gap-4
+    w-full
+    px-6 py-5
+    text-left
+    text-heading
+    font-semibold;
+}
+
+.faq-question i{
+    @apply text-primary
+    shrink-0
+    transition-transform
+    duration-300
+    ease-out;
+}
+
+.faq-item.active .faq-question i{
+    @apply rotate-180;
+}
+
+.faq-answer{
+    @apply overflow-hidden
+    max-h-0
+    transition-[max-height]
+    duration-300
+    ease-out;
+}
+
+.faq-answer p{
+    @apply px-6 pb-5
+    text-muted
+    text-sm
+    leading-relaxed;
+}
+
+@media (max-width: 576px){
+
+    .mission-vision,
+    .about-stats,
+    .how-it-works,
+    .faq{
+        @apply py-12;
+    }
+
+    .mission-vision-card{
+        @apply p-6;
+    }
+
+}
+
+}

@@ -1,0 +1,11 @@
+@layer components {
+
+   /* SIGN UP PAGE */
+   /* Reuses .auth-page from signin.css (identical centered layout).
+      This file is reserved for any sign-up-specific page layout. */
+
+.auth-page-signup .auth-card{
+    @apply max-w-[460px];
+}
+
+}

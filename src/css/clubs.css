@@ -1,0 +1,107 @@
+@layer components {
+
+   /* CLUBS HERO */
+
+.clubs-hero .hero-container{
+    @apply flex-col
+    pt-32 pb-16;
+}
+
+
+   /* Club Spotlight Slide (rotating carousel on the Clubs hero) */
+
+.carousel-slide.club-spotlight{
+    @apply flex flex-col items-center justify-center
+    text-center
+    gap-3
+    px-8
+    bg-secondary-hover;
+}
+
+.club-spotlight-icon{
+    @apply icon-circle
+    w-20 h-20
+    bg-primary/15
+    text-primary
+    text-4xl;
+}
+
+.carousel-slide.club-spotlight h4{
+    @apply text-white
+    text-2xl
+    font-bold;
+}
+
+.carousel-slide.club-spotlight p{
+    @apply text-white/70
+    text-sm;
+}
+
+.club-spotlight-stats{
+    @apply flex gap-5
+    mt-2
+    text-white/80
+    text-sm
+    font-semibold;
+}
+
+.club-spotlight-stats span{
+    @apply flex items-center gap-2;
+}
+
+.club-spotlight-stats i{
+    @apply text-primary;
+}
+
+
+   /* FILTERS TOOLBAR */
+
+.clubs-filters{
+    @apply bg-background
+    border-b border-border
+    py-8 px-5;
+}
+
+.clubs-filters-container{
+    @apply max-w-[1150px]
+    mx-auto
+    flex flex-col
+    gap-5;
+}
+
+
+   /* CLUBS GRID */
+
+.clubs-section{
+    @apply py-16 px-5;
+}
+
+.clubs-grid{
+    @apply grid
+    gap-[30px]
+    max-w-[1200px]
+    mx-auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.club-card.hidden-card{
+    @apply hidden;
+}
+
+@media (max-width: 768px){
+
+    .clubs-section{
+        @apply py-10;
+    }
+
+    .clubs-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .club-card{
+        @apply p-6;
+    }
+
+}
+
+}

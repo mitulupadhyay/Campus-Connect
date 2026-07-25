@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+    <title>Events | Campus Connect</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="../dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <!-- WEBSITE LOGO -->
+          <div class="web-logo">
+            <a href="home.html#home" class="group">
+              <i class="fa-solid fa-graduation-cap"></i>
+              Campus<span>Connect</span>
+            </a>
+          </div>
+
+          <!-- NAVIGATION LINKS -->
+          <div class="nav-links">
+            <ul>
+              <li>
+                <a href="home.html#home">
+                  <i class="fa-solid fa-house"></i>
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a href="events.html" class="active">
+                  <i class="fa-solid fa-calendar"></i>
+                  Events
+                </a>
+              </li>
+
+              <li>
+                <a href="clubs.html">
+                  <i class="fa-solid fa-people-group"></i>
+                  Clubs
+                </a>
+              </li>
+
+              <li>
+                <a href="aboutus.html">
+                  <i class="fa-solid fa-user"></i>
+                  About Us
+                </a>
+              </li>
+            </ul>
+
+            <div class="mobile-auth">
+              <a href="signin.html" id="mobile-sign-in" class="btn-secondary"
+                >Sign In</a
+              >
+              <a
+                href="signup.html"
+                id="mobile-sign-up"
+                class="btn-primary hover:bg-transparent"
+                >Sign Up</a
+              >
+            </div>
+          </div>
+
+          <!-- AUTH BUTTONS -->
+          <div class="auth-btn">
+            <a href="signin.html" class="btn-secondary" id="sign-in">Sign In</a>
+            <a href="signup.html" class="btn-primary" id="sign-up">Sign Up</a>
+          </div>
+
+          <!-- MOBILE MENU -->
+          <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero events-hero">
+        <div class="hero-container">
+          <div class="hero-row">
+            <div class="hero-content">
+              <span class="hero-badge">
+                <i class="fa-solid fa-calendar"></i> Campus Events
+              </span>
+
+              <h1 class="hero-title my-2">Discover Events Across Campus</h1>
+
+              <p class="hero-description mb-9">
+                Find workshops, hackathons, seminars, cultural festivals, sports
+                competitions, and networking opportunities happening throughout
+                your campus.
+              </p>
+
+              <!-- HERO STATS -->
+              <div class="stats">
+                <div class="stat">
+                  <h3>120+</h3>
+                  <p>Events Hosted</p>
+                </div>
+
+                <div class="stat">
+                  <h3>15+</h3>
+                  <p>Active Clubs</p>
+                </div>
+
+                <div class="stat">
+                  <h3>2,500+</h3>
+                  <p>Registrations</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- HERO CAROUSEL: rotating preview of upcoming events -->
+            <div class="hero-visual">
+              <div class="hero-carousel">
+                <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-arrow carousel-arrow-next" aria-label="Next slide">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <img src="../assets/img/card1.jpg" alt="CodeStorm hackathon" />
+                    <div class="carousel-caption">
+                      <span class="event-type-badge">Hackathon</span>
+                      <h4>CodeStorm 24hr Hackathon</h4>
+                      <p><i class="fa-solid fa-calendar"></i> 24 Aug · Main Auditorium</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img src="../assets/img/card2.jpg" alt="AI & Machine Learning Bootcamp" />
+                    <div class="carousel-caption">
+                      <span class="event-type-badge">Workshop</span>
+                      <h4>AI & Machine Learning Bootcamp</h4>
+                      <p><i class="fa-solid fa-calendar"></i> 28 Aug · Seminar Hall</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-slide">
+                    <img src="../assets/img/card3.jpg" alt="Campus Cultural Fest" />
+                    <div class="carousel-caption">
+                      <span class="event-type-badge">Cultural</span>
+                      <h4>Campus Cultural Fest 2026</h4>
+                      <p><i class="fa-solid fa-calendar"></i> 30 Aug · Open Air Theatre</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-dots">
+                  <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+                  <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+                  <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-indicator" data-target="#events-list">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH & FILTERS -->
+      <section class="events-filters" id="events-list">
+        <div class="events-filters-container">
+          <div class="events-search-row">
+            <div class="search-bar">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="event-search"
+                placeholder="Search events by name, club or venue..."
+              />
+            </div>
+
+            <div class="select-wrap">
+              <select id="event-sort" class="sort-select">
+                <option value="date">Sort: Upcoming Date</option>
+                <option value="seats">Sort: Seats Available</option>
+                <option value="az">Sort: A-Z</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="filter-bar" id="event-filters">
+            <button class="filter-chip active" data-filter="all">All Events</button>
+            <button class="filter-chip" data-filter="hackathon">Hackathon</button>
+            <button class="filter-chip" data-filter="workshop">Workshop</button>
+            <button class="filter-chip" data-filter="cultural">Cultural</button>
+            <button class="filter-chip" data-filter="seminar">Seminar</button>
+            <button class="filter-chip" data-filter="sports">Sports</button>
+            <button class="filter-chip" data-filter="networking">Networking</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTS GRID -->
+      <section class="events-section">
+        <div class="events-grid" id="events-grid">
+          <!-- EVENT 1 -->
+          <div class="event-card" data-category="hackathon" data-title="codestorm 24hr hackathon" data-date="2026-08-24" data-seats="24">
+            <div class="card-image">
+              <img src="../assets/img/card1.jpg" alt="CodeStorm hackathon" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Hackathon</span>
+                <span class="badge-gray">Coding Club</span>
+              </div>
+              <h3>CodeStorm 24hr Hackathon</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 24/08/26, 12:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Main Auditorium</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 24 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 2 -->
+          <div class="event-card" data-category="workshop" data-title="ai & machine learning bootcamp" data-date="2026-08-28" data-seats="48">
+            <div class="card-image">
+              <img src="../assets/img/card2.jpg" alt="AI workshop event" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Workshop</span>
+                <span class="badge-gray">AI Club</span>
+              </div>
+              <h3>AI & Machine Learning Bootcamp</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 28/08/26, 10:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students & Teachers</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 48 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 3 -->
+          <div class="event-card" data-category="cultural" data-title="campus cultural fest 2026" data-date="2026-08-30" data-seats="120">
+            <div class="card-image">
+              <img src="../assets/img/card3.jpg" alt="Cultural fest" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Cultural</span>
+                <span class="badge-gray">Drama Club</span>
+              </div>
+              <h3>Campus Cultural Fest 2026</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 30/08/26, 6:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Open Air Theatre</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 120 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 4 -->
+          <div class="event-card" data-category="hackathon" data-title="web dev sprint" data-date="2026-09-05" data-seats="30">
+            <div class="card-image">
+              <img src="../assets/img/card1.jpg" alt="Web dev sprint hackathon" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Hackathon</span>
+                <span class="badge-gray">Coding Club</span>
+              </div>
+              <h3>Web Dev Sprint</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 05/09/26, 9:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Computer Lab 2</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 30 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 5 -->
+          <div class="event-card" data-category="workshop" data-title="ui/ux design workshop" data-date="2026-09-08" data-seats="40">
+            <div class="card-image">
+              <img src="../assets/img/card2.jpg" alt="UI/UX design workshop" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Workshop</span>
+                <span class="badge-gray">Design Club</span>
+              </div>
+              <h3>UI/UX Design Workshop</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 08/09/26, 11:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Design Studio</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 40 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 6 -->
+          <div class="event-card" data-category="cultural" data-title="inter-college dance battle" data-date="2026-09-12" data-seats="200">
+            <div class="card-image">
+              <img src="../assets/img/card3.jpg" alt="Inter-college dance battle" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Cultural</span>
+                <span class="badge-gray">Dance Club</span>
+              </div>
+              <h3>Inter-College Dance Battle</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 12/09/26, 5:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Main Auditorium</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 200 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 7 -->
+          <div class="event-card" data-category="seminar" data-title="placement preparation seminar" data-date="2026-09-15" data-seats="150">
+            <div class="card-image">
+              <img src="../assets/img/card1.jpg" alt="Placement preparation seminar" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Seminar</span>
+                <span class="badge-gray">Training & Placement Cell</span>
+              </div>
+              <h3>Placement Preparation Seminar</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 15/09/26, 2:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Final Year Students</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 150 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 8 -->
+          <div class="event-card" data-category="sports" data-title="annual sports meet" data-date="2026-09-20" data-seats="500">
+            <div class="card-image">
+              <img src="../assets/img/card2.jpg" alt="Annual sports meet" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Sports</span>
+                <span class="badge-gray">Sports Committee</span>
+              </div>
+              <h3>Annual Sports Meet</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 20/09/26, 8:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> University Ground</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 500 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 9 -->
+          <div class="event-card" data-category="networking" data-title="startup networking mixer" data-date="2026-09-25" data-seats="80">
+            <div class="card-image">
+              <img src="../assets/img/card3.jpg" alt="Startup networking mixer" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Networking</span>
+                <span class="badge-gray">E-Cell</span>
+              </div>
+              <h3>Startup Networking Mixer</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 25/09/26, 4:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Innovation Hub</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 80 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 10 -->
+          <div class="event-card" data-category="hackathon" data-title="cybersecurity ctf challenge" data-date="2026-10-02" data-seats="36">
+            <div class="card-image">
+              <img src="../assets/img/card1.jpg" alt="Cybersecurity CTF challenge" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Hackathon</span>
+                <span class="badge-gray">Coding Club</span>
+              </div>
+              <h3>Cybersecurity CTF Challenge</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 02/10/26, 10:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Computer Lab 1</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 36 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 11 -->
+          <div class="event-card" data-category="workshop" data-title="cloud computing workshop" data-date="2026-10-05" data-seats="45">
+            <div class="card-image">
+              <img src="../assets/img/card2.jpg" alt="Cloud computing workshop" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Workshop</span>
+                <span class="badge-gray">AI Club</span>
+              </div>
+              <h3>Cloud Computing Workshop</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 05/10/26, 1:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 45 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 12 -->
+          <div class="event-card" data-category="cultural" data-title="battle of bands" data-date="2026-10-10" data-seats="180">
+            <div class="card-image">
+              <img src="../assets/img/card3.jpg" alt="Battle of Bands" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Cultural</span>
+                <span class="badge-gray">Music Club</span>
+              </div>
+              <h3>Battle of Bands</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 10/10/26, 7:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Open Air Theatre</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 180 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 13 -->
+          <div class="event-card" data-category="seminar" data-title="resume & interview skills seminar" data-date="2026-10-14" data-seats="100">
+            <div class="card-image">
+              <img src="../assets/img/card1.jpg" alt="Resume and interview skills seminar" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Seminar</span>
+                <span class="badge-gray">Training & Placement Cell</span>
+              </div>
+              <h3>Resume & Interview Skills Seminar</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 14/10/26, 3:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Final Year Students</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 100 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 14 -->
+          <div class="event-card" data-category="sports" data-title="inter-department cricket tournament" data-date="2026-10-18" data-seats="300">
+            <div class="card-image">
+              <img src="../assets/img/card2.jpg" alt="Inter-department cricket tournament" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Sports</span>
+                <span class="badge-gray">Sports Committee</span>
+              </div>
+              <h3>Inter-Department Cricket Tournament</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 18/10/26, 8:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> University Ground</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 300 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT 15 -->
+          <div class="event-card" data-category="networking" data-title="alumni networking evening" data-date="2026-10-22" data-seats="60">
+            <div class="card-image">
+              <img src="../assets/img/card3.jpg" alt="Alumni networking evening" />
+            </div>
+            <div class="card-body">
+              <div class="card-badges">
+                <span class="event-type-badge">Networking</span>
+                <span class="badge-gray">E-Cell</span>
+              </div>
+              <h3>Alumni Networking Evening</h3>
+              <div class="card-info">
+                <div class="card-date"><i class="fa-solid fa-calendar"></i> 22/10/26, 5:30 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Innovation Hub</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students & Alumni</div>
+              </div>
+              <div class="card-divider"></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 60 seats left</p></div>
+              <div class="card-actions">
+                <a href="#" class="btn-outline">View Details</a>
+                <a href="#" class="btn-solid">Register</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="no-results" id="events-no-results">
+          <i class="fa-solid fa-calendar-xmark"></i>
+          <p>No events match your search. Try a different keyword or filter.</p>
+        </div>
+
+        <!-- PAGINATION (page number buttons are injected by events.js) -->
+        <div class="pagination" id="events-pagination">
+          <button class="page-btn" id="events-prev" disabled>
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="pagination-numbers" id="events-page-numbers"></div>
+          <button class="page-btn" id="events-next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- CTA SECTION -->
+      <section class="cta">
+        <div class="cta-container">
+          <h2>Organizing an Event of Your Own?</h2>
+
+          <p>
+            Submit your event for admin approval and reach every student on
+            campus in minutes.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="signup.html" class="btn-cta-primary">Submit an Event</a>
+            <a href="clubs.html" class="btn-cta-secondary">Browse Clubs</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="home.html#home" class="footer-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Campus<span>Connect</span>
+          </a>
+
+          <p>
+            A smart campus engagement platform that helps students discover
+            opportunities and clubs manage events efficiently.
+          </p>
+
+          <div class="footer-social">
+            <a href="#">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-links">
+          <h3>Explore</h3>
+
+          <a href="home.html#home">Home</a>
+          <a href="events.html">Events</a>
+          <a href="clubs.html">Clubs</a>
+          <a href="aboutus.html">About Us</a>
+        </div>
+
+        <!-- Account -->
+        <div class="footer-links">
+          <h3>Account</h3>
+
+          <a href="signin.html">Sign In</a>
+          <a href="signup.html">Sign Up</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h3>Contact</h3>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            support@campusconnect.edu
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +91 XXX
+          </p>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Graphic Era Hill University
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 CampusConnect. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+    <script src="js/events.js"></script>
+  </body>
+</html>

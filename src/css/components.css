@@ -225,4 +225,508 @@
     leading-relaxed;
 }
 
+
+   /* Compact Page Hero (Events / Clubs / About) */
+
+.scroll-indicator{
+    @apply flex justify-center
+    mt-10
+    text-white/60
+    text-xl
+    cursor-pointer
+    transition-colors
+    duration-300
+    ease-out
+    animate-bounce;
+}
+
+.scroll-indicator:hover{
+    @apply text-primary;
+}
+
+
+   /* Hero Row Layout Helper — splits a hero into a text column + a
+      visual column. Used on any hero that has a carousel/side visual
+      (Events, Clubs). Keep the scroll-indicator OUTSIDE this row so it
+      always centers beneath the full hero, not squeezed between columns. */
+
+.hero-row{
+    @apply flex flex-col lg:flex-row
+    items-center
+    gap-5
+    w-full;
+}
+
+
+   /* Hero Visual / Carousel (Events & Clubs) */
+
+.hero-visual{
+    @apply hidden lg:flex
+    flex-1
+    justify-center;
+}
+
+.hero-carousel{
+    @apply relative
+    w-full max-w-[480px]
+    rounded-[20px]
+    overflow-hidden
+    shadow-2xl;
+}
+
+.carousel-track{
+    @apply relative
+    h-[430px];
+}
+
+.carousel-slide{
+    @apply absolute inset-0
+    opacity-0
+    invisible
+    transition-opacity
+    duration-700
+    ease-out;
+}
+
+.carousel-slide.active{
+    @apply opacity-100 visible;
+}
+
+.carousel-slide img{
+    @apply w-full h-full object-cover;
+}
+
+.carousel-caption{
+    @apply absolute bottom-0 left-0 right-0
+    bg-gradient-to-t from-secondary via-secondary/80 to-transparent
+    px-6 pt-16 pb-6
+    flex flex-col gap-2;
+}
+
+.carousel-caption h4{
+    @apply text-white text-lg font-semibold;
+}
+
+.carousel-caption p{
+    @apply flex items-center gap-2
+    text-white/75
+    text-sm;
+}
+
+.carousel-caption p i{
+    @apply text-primary;
+}
+
+.carousel-dots{
+    @apply absolute bottom-4 right-5
+    z-10
+    flex gap-2;
+}
+
+.carousel-dot{
+    @apply w-2.5 h-2.5
+    rounded-full
+    bg-white/40
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.carousel-dot.active{
+    @apply w-6
+    bg-primary;
+}
+
+
+   /* Carousel Arrows (prev/next) */
+
+.carousel-arrow{
+    @apply absolute top-1/2 z-10
+    -translate-y-1/2
+    flex items-center justify-center
+    w-10 h-10
+    rounded-full
+    border border-white/20
+    bg-secondary/50
+    text-white
+    text-sm
+    backdrop-blur-sm
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.carousel-arrow:hover{
+    @apply bg-primary
+    border-primary;
+}
+
+.carousel-arrow-prev{
+    @apply left-3;
+}
+
+.carousel-arrow-next{
+    @apply right-3;
+}
+
+
+   /* Search Bar */
+
+.search-bar{
+    @apply flex items-center gap-3
+    w-full
+    px-5 py-3.5
+    rounded-[10px]
+    border border-border
+    bg-surface
+    shadow-sm
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.search-bar:focus-within{
+    @apply border-primary
+    shadow-md;
+}
+
+.search-bar i{
+    @apply text-muted;
+}
+
+.search-bar input{
+    @apply flex-1
+    bg-transparent
+    text-heading
+    text-sm md:text-base;
+}
+
+.search-bar input::placeholder{
+    @apply text-muted;
+}
+
+
+   /* Filter Chips */
+
+.filter-bar{
+    @apply flex flex-wrap items-center gap-3;
+}
+
+.filter-chip{
+    @apply inline-flex items-center gap-2
+    px-4 py-2
+    rounded-full
+    border border-border
+    bg-surface
+    text-secondary-hover
+    text-sm
+    font-semibold
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.filter-chip:hover{
+    @apply border-primary
+    text-primary
+    -translate-y-0.5;
+}
+
+.filter-chip.active{
+    @apply bg-primary
+    border-primary
+    text-white;
+}
+
+
+   /* Sort Select */
+
+.select-wrap{
+    @apply relative
+    inline-block;
+}
+
+.select-wrap i{
+    @apply pointer-events-none
+    absolute right-4 top-1/2
+    -translate-y-1/2
+    text-muted
+    text-xs;
+}
+
+.sort-select{
+    @apply appearance-none
+    w-full
+    pl-4 pr-10 py-2.5
+    rounded-[10px]
+    border border-border
+    bg-surface
+    text-secondary-hover
+    text-sm
+    font-semibold
+    cursor-pointer
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.sort-select:hover,
+.sort-select:focus{
+    @apply border-primary;
+}
+
+
+   /* Filter Toolbar Layout Helper */
+
+.toolbar{
+    @apply flex flex-col md:flex-row
+    items-stretch md:items-center
+    justify-between
+    gap-4;
+}
+
+
+   /* Pagination */
+
+.pagination{
+    @apply flex items-center justify-center
+    gap-2
+    mt-16;
+}
+
+.pagination-numbers{
+    @apply flex items-center gap-2;
+}
+
+.page-btn{
+    @apply inline-flex items-center justify-center
+    w-11 h-11
+    rounded-[10px]
+    border border-border
+    bg-surface
+    text-secondary-hover
+    font-semibold
+    text-sm
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.page-btn:hover{
+    @apply border-primary
+    text-primary;
+}
+
+.page-btn.active{
+    @apply bg-primary
+    border-primary
+    text-white;
+}
+
+.page-btn:disabled{
+    @apply opacity-40
+    cursor-not-allowed;
+}
+
+.page-btn:disabled:hover{
+    @apply border-border
+    text-secondary-hover;
+}
+
+
+   /* No Results (empty state for search / filter) */
+
+.no-results{
+    @apply hidden
+    max-w-[1150px]
+    mx-auto
+    py-20
+    text-center
+    text-muted;
+}
+
+.no-results.show{
+    @apply flex flex-col items-center gap-3;
+}
+
+.no-results i{
+    @apply text-4xl
+    text-primary/50
+    mb-2;
+}
+
+
+   /* Form Elements (Auth Pages) */
+
+.form-group{
+    @apply flex flex-col
+    gap-2
+    mb-5;
+}
+
+.form-label{
+    @apply text-sm
+    font-semibold
+    text-heading;
+}
+
+.input-wrap{
+    @apply relative
+    flex items-center;
+}
+
+.input-icon{
+    @apply absolute left-4
+    text-muted
+    text-base;
+}
+
+.form-input{
+    @apply w-full
+    pl-11 pr-11 py-3
+    rounded-[10px]
+    border border-border
+    bg-surface
+    text-heading
+    text-sm
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.form-input::placeholder{
+    @apply text-muted;
+}
+
+.form-input:focus{
+    @apply border-primary
+    shadow-sm;
+}
+
+.password-toggle{
+    @apply absolute right-4
+    text-muted
+    text-base
+    transition-colors
+    duration-300
+    ease-out;
+}
+
+.password-toggle:hover{
+    @apply text-primary;
+}
+
+.form-options{
+    @apply flex items-center justify-between
+    text-sm
+    mb-6;
+}
+
+.checkbox-wrap{
+    @apply flex items-center gap-2
+    text-muted
+    cursor-pointer;
+}
+
+.checkbox-wrap input{
+    @apply accent-primary
+    w-4 h-4;
+}
+
+.form-link{
+    @apply text-primary
+    font-semibold
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.form-link:hover{
+    @apply text-primary-hover
+    underline;
+}
+
+
+   /* Auth Card */
+
+.auth-card{
+    @apply card
+    w-full max-w-[440px]
+    mx-auto
+    p-8 md:p-9
+    shadow-lg;
+}
+
+.auth-icon{
+    @apply icon-circle
+    w-14 h-14
+    mx-auto mb-4
+    bg-primary/10
+    text-primary
+    text-2xl;
+}
+
+.auth-header{
+    @apply text-center
+    mb-8;
+}
+
+.auth-header h1{
+    @apply text-2xl
+    font-bold
+    text-heading
+    mb-2;
+}
+
+.auth-header p{
+    @apply text-muted
+    text-sm;
+}
+
+.auth-divider{
+    @apply flex items-center
+    gap-4
+    my-6
+    text-xs
+    text-muted
+    font-semibold
+    uppercase
+    tracking-wide;
+}
+
+.auth-divider::before,
+.auth-divider::after{
+    content: "";
+    @apply flex-1 h-px bg-border;
+}
+
+.btn-google{
+    @apply w-full
+    inline-flex items-center justify-center
+    gap-3
+    px-4 py-3
+    rounded-[10px]
+    border border-border
+    bg-surface
+    text-heading
+    font-semibold
+    text-sm
+    transition-all
+    duration-300
+    ease-out;
+}
+
+.btn-google:hover{
+    @apply border-secondary
+    bg-slate-50
+    -translate-y-0.5;
+}
+
+.auth-footer{
+    @apply text-center
+    mt-6
+    text-sm
+    text-muted;
+}
+
 }

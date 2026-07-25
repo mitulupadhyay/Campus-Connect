@@ -1,0 +1,64 @@
+@layer components {
+
+   /* EVENTS HERO */
+
+.events-hero .hero-container{
+    @apply flex-col
+    pt-32 pb-16;
+}
+
+
+   /* FILTERS TOOLBAR */
+
+.events-filters{
+    @apply bg-background
+    border-b border-border
+    py-8 px-5;
+}
+
+.events-filters-container{
+    @apply max-w-[1150px]
+    mx-auto
+    flex flex-col
+    gap-5;
+}
+
+.events-search-row{
+    @apply grid
+    grid-cols-1 md:grid-cols-[1fr_auto]
+    gap-4;
+}
+
+
+   /* EVENTS GRID */
+
+.events-section{
+    @apply py-16 px-5;
+}
+
+.events-grid{
+    @apply grid
+    justify-center
+    gap-[30px]
+    max-w-[1150px]
+    mx-auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
+}
+
+.event-card.hidden-card{
+    @apply hidden;
+}
+
+@media (max-width: 576px){
+
+    .events-section{
+        @apply py-10;
+    }
+
+    .card-actions{
+        @apply flex-col;
+    }
+
+}
+
+}

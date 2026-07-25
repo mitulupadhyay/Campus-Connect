@@ -1,0 +1,43 @@
+@layer components {
+
+   /* SIGN IN PAGE */
+   /* .auth-page is the shared centered layout for both Sign In and
+      Sign Up (see .auth-page-signup in signup.css for its one
+      override). The ::before/::after blobs are purely decorative. */
+
+.auth-page{
+    @apply min-h-screen
+    relative
+    overflow-hidden
+    flex items-center justify-center
+    bg-background
+    px-5
+    pt-[110px] pb-20;
+}
+
+.auth-page::before,
+.auth-page::after{
+    content: "";
+    @apply absolute
+    rounded-full
+    blur-3xl
+    pointer-events-none;
+}
+
+.auth-page::before{
+    @apply -top-20 -left-20
+    w-72 h-72
+    bg-primary/10;
+}
+
+.auth-page::after{
+    @apply -bottom-24 -right-24
+    w-96 h-96
+    bg-secondary/10;
+}
+
+.auth-page .auth-card{
+    @apply relative z-10;
+}
+
+}
