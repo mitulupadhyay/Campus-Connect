@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+    <link rel="icon" href="../assets/img/favicon.png" type="image/png" />
     <title>Clubs | Campus Connect</title>
     <link
       rel="stylesheet"
@@ -15,11 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    
     <link href="../dist/output.css" rel="stylesheet" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- NAVBAR -->
 
     <header>
@@ -28,51 +28,46 @@
           <!-- WEBSITE LOGO -->
           <div class="web-logo">
             <a href="home.html#home" class="group">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
               Campus<span>Connect</span>
             </a>
           </div>
 
           <!-- NAVIGATION LINKS -->
-          <div class="nav-links">
+          <div class="nav-links" id="primary-navigation">
             <ul>
               <li>
                 <a href="home.html#home">
-                  <i class="fa-solid fa-house"></i>
+                  <i class="fa-solid fa-house" aria-hidden="true"></i>
                   Home
                 </a>
               </li>
 
               <li>
                 <a href="events.html">
-                  <i class="fa-solid fa-calendar"></i>
+                  <i class="fa-solid fa-calendar" aria-hidden="true"></i>
                   Events
                 </a>
               </li>
 
               <li>
-                <a href="clubs.html" class="active">
-                  <i class="fa-solid fa-people-group"></i>
+                <a href="clubs.html" class="active" aria-current="page">
+                  <i class="fa-solid fa-people-group" aria-hidden="true"></i>
                   Clubs
                 </a>
               </li>
 
               <li>
                 <a href="aboutus.html">
-                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
                   About Us
                 </a>
               </li>
             </ul>
 
             <div class="mobile-auth">
-              <a href="signin.html" id="mobile-sign-in" class="btn-secondary"
-                >Sign In</a
-              >
-              <a
-                href="signup.html"
-                id="mobile-sign-up"
-                class="btn-primary hover:bg-transparent"
+              <a href="signin.html" class="btn-secondary">Sign In</a>
+              <a href="signup.html" class="btn-primary hover:bg-transparent"
                 >Sign Up</a
               >
             </div>
@@ -80,26 +75,32 @@
 
           <!-- AUTH BUTTONS -->
           <div class="auth-btn">
-            <a href="signin.html" class="btn-secondary" id="sign-in">Sign In</a>
-            <a href="signup.html" class="btn-primary" id="sign-up">Sign Up</a>
+            <a href="signin.html" class="btn-secondary">Sign In</a>
+            <a href="signup.html" class="btn-primary">Sign Up</a>
           </div>
 
           <!-- MOBILE MENU -->
-          <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- HERO SECTION -->
       <section class="hero clubs-hero">
         <div class="hero-container">
           <div class="hero-row">
             <div class="hero-content">
               <span class="hero-badge">
-                <i class="fa-solid fa-people-group"></i> Student Communities
+                <i class="fa-solid fa-people-group" aria-hidden="true"></i> Student Communities
               </span>
 
               <h1 class="hero-title my-2">Find Your Community on Campus</h1>
@@ -129,74 +130,79 @@
               </div>
             </div>
 
-            <!-- HERO CAROUSEL: rotating club spotlight -->
+            <!-- HERO CAROUSEL -->
             <div class="hero-visual">
               <div class="hero-carousel">
-                <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide">
-                  <i class="fa-solid fa-chevron-left"></i>
+                <button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide">
+                  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
-                <button class="carousel-arrow carousel-arrow-next" aria-label="Next slide">
-                  <i class="fa-solid fa-chevron-right"></i>
+                <button type="button" class="carousel-arrow carousel-arrow-next" aria-label="Next slide">
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
 
                 <div class="carousel-track">
                   <div class="carousel-slide club-spotlight active">
                     <div class="club-spotlight-icon">
-                      <i class="fa-solid fa-laptop-code"></i>
+                      <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
                     </div>
                     <h4>Coding Club</h4>
                     <p>Building Future Developers</p>
                     <div class="club-spotlight-stats">
-                      <span><i class="fa-solid fa-users"></i> 425 Members</span>
-                      <span><i class="fa-solid fa-star"></i> 4.9/5</span>
+                      <span><i class="fa-solid fa-users" aria-hidden="true"></i> 425 Members</span>
+                      <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9/5</span>
                     </div>
                   </div>
 
                   <div class="carousel-slide club-spotlight">
                     <div class="club-spotlight-icon">
-                      <i class="fa-solid fa-music"></i>
+                      <i class="fa-solid fa-music" aria-hidden="true"></i>
                     </div>
                     <h4>Music Club</h4>
                     <p>Feel the Rhythm</p>
                     <div class="club-spotlight-stats">
-                      <span><i class="fa-solid fa-users"></i> 390 Members</span>
-                      <span><i class="fa-solid fa-star"></i> 4.9/5</span>
+                      <span><i class="fa-solid fa-users" aria-hidden="true"></i> 390 Members</span>
+                      <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9/5</span>
                     </div>
                   </div>
 
                   <div class="carousel-slide club-spotlight">
                     <div class="club-spotlight-icon">
-                      <i class="fa-solid fa-briefcase"></i>
+                      <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
                     </div>
                     <h4>Entrepreneurship Club</h4>
                     <p>Turning Ideas into Startups</p>
                     <div class="club-spotlight-stats">
-                      <span><i class="fa-solid fa-users"></i> 340 Members</span>
-                      <span><i class="fa-solid fa-star"></i> 4.9/5</span>
+                      <span><i class="fa-solid fa-users" aria-hidden="true"></i> 340 Members</span>
+                      <span><i class="fa-solid fa-star" aria-hidden="true"></i> 4.9/5</span>
                     </div>
                   </div>
                 </div>
 
                 <div class="carousel-dots">
-                  <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
-                  <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
-                  <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+                  <button type="button" class="carousel-dot active" aria-label="Slide 1"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="scroll-indicator" data-target="#clubs-list">
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
+          <button
+            type="button"
+            class="scroll-indicator"
+            aria-label="Scroll to clubs list"
+          >
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
         </div>
       </section>
 
       <!-- SEARCH & FILTERS -->
-      <section class="clubs-filters" id="clubs-list">
+      <section class="clubs-filters">
         <div class="clubs-filters-container">
           <div class="search-bar">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <label for="club-search" class="sr-only">Search clubs</label>
             <input
               type="text"
               id="club-search"
@@ -204,277 +210,277 @@
             />
           </div>
 
-          <div class="filter-bar" id="club-filters">
-            <button class="filter-chip active" data-filter="all">All Clubs</button>
-            <button class="filter-chip" data-filter="technology">Technology</button>
-            <button class="filter-chip" data-filter="engineering">Engineering</button>
-            <button class="filter-chip" data-filter="creative arts">Creative Arts</button>
-            <button class="filter-chip" data-filter="performing arts">Performing Arts</button>
-            <button class="filter-chip" data-filter="design">Design</button>
-            <button class="filter-chip" data-filter="business">Business</button>
+          <div class="filter-bar" role="group" aria-label="Filter clubs by category">
+            <button type="button" class="filter-chip active" aria-pressed="true">All Clubs</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Technology</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Engineering</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Creative Arts</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Performing Arts</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Design</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Business</button>
           </div>
         </div>
       </section>
 
       <!-- CLUBS GRID -->
       <section class="clubs-section">
-        <div class="clubs-grid" id="clubs-grid">
+        <div class="clubs-grid">
           <!-- CLUB 1 -->
-          <div class="club-card" data-category="technology" data-name="coding club">
-            <div class="club-logo"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Coding Club</h3>
               <p class="club-description">Building Future Developers</p>
               <span class="club-category">Technology</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span> 425 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span> 18 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span> 4.9/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span> 425 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span> 18 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span> 4.9/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 2 -->
-          <div class="club-card" data-category="engineering" data-name="robotics club">
-            <div class="club-logo"><i class="fa-solid fa-robot"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Robotics Club</h3>
               <p class="club-description">Build, Innovate & Compete</p>
               <span class="club-category">Engineering</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>310 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>14 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.8/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>310 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>14 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.8/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Arduino</span><span>Python</span><span>IoT</span><span>AI</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 3 -->
-          <div class="club-card" data-category="creative arts" data-name="photography club">
-            <div class="club-logo"><i class="fa-solid fa-camera"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-camera" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Photography Club</h3>
               <p class="club-description">Capture Every Moment</p>
               <span class="club-category">Creative Arts</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>275 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>12 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.7/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>275 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>12 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.7/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>DSLR</span><span>Editing</span><span>Lightroom</span><span>Travel</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 4 -->
-          <div class="club-card" data-category="performing arts" data-name="music club">
-            <div class="club-logo"><i class="fa-solid fa-music"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-music" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Music Club</h3>
               <p class="club-description">Feel the Rhythm</p>
               <span class="club-category">Performing Arts</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>390 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>22 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.9/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>390 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>22 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.9/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Guitar</span><span>Singing</span><span>Band</span><span>Piano</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 5 -->
-          <div class="club-card" data-category="design" data-name="design club">
-            <div class="club-logo"><i class="fa-solid fa-palette"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Design Club</h3>
               <p class="club-description">Creativity Meets Innovation</p>
               <span class="club-category">Design</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>285 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>16 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.8/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>285 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>16 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.8/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Figma</span><span>UI/UX</span><span>Canva</span><span>Branding</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 6 -->
-          <div class="club-card" data-category="business" data-name="entrepreneurship club">
-            <div class="club-logo"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Entrepreneurship Club</h3>
               <p class="club-description">Turning Ideas into Startups</p>
               <span class="club-category">Business</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>340 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>20 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.9/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>340 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>20 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.9/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Startups</span><span>Pitching</span><span>Leadership</span><span>Networking</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 7 -->
-          <div class="club-card" data-category="performing arts" data-name="dance club">
-            <div class="club-logo"><i class="fa-solid fa-shoe-prints"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-shoe-prints" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Dance Club</h3>
               <p class="club-description">Express Through Movement</p>
               <span class="club-category">Performing Arts</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>260 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>15 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.8/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>260 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>15 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.8/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Hip-Hop</span><span>Classical</span><span>Choreography</span><span>Fusion</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 8 -->
-          <div class="club-card" data-category="creative arts" data-name="literary club">
-            <div class="club-logo"><i class="fa-solid fa-feather-pointed"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Literary & Debate Club</h3>
               <p class="club-description">Words That Move Minds</p>
               <span class="club-category">Creative Arts</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>210 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>10 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.7/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>210 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>10 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.7/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Debate</span><span>Poetry</span><span>Writing</span><span>Public Speaking</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 9 -->
-          <div class="club-card" data-category="creative arts" data-name="film and media club">
-            <div class="club-logo"><i class="fa-solid fa-film"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-film" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Film & Media Club</h3>
               <p class="club-description">Tell Stories Through the Lens</p>
               <span class="club-category">Creative Arts</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>195 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>9 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.6/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>195 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>9 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.6/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Filmmaking</span><span>Editing</span><span>Scriptwriting</span><span>Vlogging</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 10 -->
-          <div class="club-card" data-category="technology" data-name="ai and data science club">
-            <div class="club-logo"><i class="fa-solid fa-brain"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>AI & Data Science Club</h3>
               <p class="club-description">Learn, Build, Predict</p>
               <span class="club-category">Technology</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>355 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>17 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.9/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>355 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>17 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.9/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Python</span><span>ML</span><span>Data Viz</span><span>Kaggle</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 11 -->
-          <div class="club-card" data-category="business" data-name="finance and investment club">
-            <div class="club-logo"><i class="fa-solid fa-chart-pie"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Finance & Investment Club</h3>
               <p class="club-description">Learn the Language of Money</p>
               <span class="club-category">Business</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>230 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>11 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.7/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>230 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>11 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.7/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Stocks</span><span>Budgeting</span><span>Case Studies</span><span>Fintech</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
 
           <!-- CLUB 12 -->
-          <div class="club-card" data-category="performing arts" data-name="theatre club">
-            <div class="club-logo"><i class="fa-solid fa-masks-theater"></i></div>
+          <div class="club-card">
+            <div class="club-logo"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></div>
             <div class="club-info">
               <h3>Theatre Club</h3>
               <p class="club-description">Every Student Has a Stage</p>
               <span class="club-category">Performing Arts</span>
               <div class="club-divider"></div>
               <div class="club-stats">
-                <div class="club-stat"><i class="fa-solid fa-users"></i><span>245 Members</span></div>
-                <div class="club-stat"><i class="fa-solid fa-calendar"></i><span>13 Events</span></div>
-                <div class="club-stat"><i class="fa-solid fa-star"></i><span>4.8/5 Rating</span></div>
+                <div class="club-stat"><i class="fa-solid fa-users" aria-hidden="true"></i><span>245 Members</span></div>
+                <div class="club-stat"><i class="fa-solid fa-calendar" aria-hidden="true"></i><span>13 Events</span></div>
+                <div class="club-stat"><i class="fa-solid fa-star" aria-hidden="true"></i><span>4.8/5 Rating</span></div>
               </div>
               <div class="club-tags">
                 <span>Acting</span><span>Scriptwriting</span><span>Improv</span><span>Direction</span>
               </div>
-              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#" class="club-btn">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="no-results" id="clubs-no-results">
-          <i class="fa-solid fa-magnifying-glass-minus"></i>
+        <div class="no-results">
+          <i class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></i>
           <p>No clubs match your search. Try a different keyword or filter.</p>
         </div>
 
         <!-- PAGINATION (page number buttons are injected by clubs.js) -->
-        <div class="pagination" id="clubs-pagination">
-          <button class="page-btn" id="clubs-prev" disabled>
-            <i class="fa-solid fa-chevron-left"></i>
+        <nav class="pagination" aria-label="Clubs pagination">
+          <button type="button" class="page-btn" aria-label="Previous page" disabled>
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           </button>
-          <div class="pagination-numbers" id="clubs-page-numbers"></div>
-          <button class="page-btn" id="clubs-next">
-            <i class="fa-solid fa-chevron-right"></i>
+          <div class="pagination-numbers"></div>
+          <button type="button" class="page-btn" aria-label="Next page">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
           </button>
-        </div>
+        </nav>
       </section>
 
       <!-- JOIN CLUB CTA -->
@@ -502,7 +508,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="home.html#home" class="footer-logo">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             Campus<span>Connect</span>
           </a>
 
@@ -512,20 +518,20 @@
           </p>
 
           <div class="footer-social">
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
+            <a href="#" aria-label="CampusConnect on GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
+            <a href="#" aria-label="CampusConnect on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
+            <a href="#" aria-label="CampusConnect on Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-x-twitter"></i>
+            <a href="#" aria-label="CampusConnect on X (Twitter)">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -553,17 +559,17 @@
           <h3>Contact</h3>
 
           <p>
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             support@campusconnect.edu
           </p>
 
           <p>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
             +91 XXX
           </p>
 
           <p>
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             Graphic Era Hill University
           </p>
         </div>
@@ -574,7 +580,8 @@
       </div>
     </footer>
 
-    <script src="js/home.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/clubs.js"></script>
   </body>
 </html>

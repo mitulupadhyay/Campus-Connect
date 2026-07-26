@@ -4,7 +4,8 @@
 
 .navbar{
     @apply fixed top-0 left-0 w-full z-[1000]
-    bg-secondary;
+    bg-secondary
+    transition-all duration-300 ease-out;
 }
 
 .navbar-container{
@@ -31,12 +32,6 @@
     @apply text-primary text-[26px] 
     transition-transform duration-300 ease-out
     group-hover:-rotate-35;
-}
-.group-hover{
-    @apply -rotate-35;
-}
-.web-logo i:hover{
-    @apply -rotate-35;
 }
 
 .web-logo span{
@@ -68,6 +63,10 @@
     -translate-y-0.5;
 }
 
+.nav-links a:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary;
+}
+
 .nav-links a.active{
     @apply bg-primary/80;
 }
@@ -93,15 +92,20 @@
 .menu-toggle{
     @apply hidden
     text-white text-2xl
-    cursor-pointer;
+    cursor-pointer
+    transition-colors duration-300 ease-out;
+}
+
+.menu-toggle:hover{
+    @apply text-primary;
+}
+
+.menu-toggle:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary rounded-md;
 }
 
 
    /* SCROLLED STATE */
-
-.navbar{
-    @apply transition-all duration-300 ease-out;
-}
 
 .navbar.scrolled{
     @apply bg-secondary/50 backdrop-blur-xl shadow-lg shadow-black/10;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+    <link rel="icon" href="../assets/img/favicon.png" type="image/png" />
     <title>Events | Campus Connect</title>
     <link
       rel="stylesheet"
@@ -19,6 +19,8 @@
     <link href="../dist/output.css" rel="stylesheet" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- NAVBAR -->
 
     <header>
@@ -27,51 +29,46 @@
           <!-- WEBSITE LOGO -->
           <div class="web-logo">
             <a href="home.html#home" class="group">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
               Campus<span>Connect</span>
             </a>
           </div>
 
           <!-- NAVIGATION LINKS -->
-          <div class="nav-links">
+          <div class="nav-links" id="primary-navigation">
             <ul>
               <li>
                 <a href="home.html#home">
-                  <i class="fa-solid fa-house"></i>
+                  <i class="fa-solid fa-house" aria-hidden="true"></i>
                   Home
                 </a>
               </li>
 
               <li>
-                <a href="events.html" class="active">
-                  <i class="fa-solid fa-calendar"></i>
+                <a href="events.html" class="active" aria-current="page">
+                  <i class="fa-solid fa-calendar" aria-hidden="true"></i>
                   Events
                 </a>
               </li>
 
               <li>
                 <a href="clubs.html">
-                  <i class="fa-solid fa-people-group"></i>
+                  <i class="fa-solid fa-people-group" aria-hidden="true"></i>
                   Clubs
                 </a>
               </li>
 
               <li>
                 <a href="aboutus.html">
-                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
                   About Us
                 </a>
               </li>
             </ul>
 
             <div class="mobile-auth">
-              <a href="signin.html" id="mobile-sign-in" class="btn-secondary"
-                >Sign In</a
-              >
-              <a
-                href="signup.html"
-                id="mobile-sign-up"
-                class="btn-primary hover:bg-transparent"
+              <a href="signin.html" class="btn-secondary">Sign In</a>
+              <a href="signup.html" class="btn-primary hover:bg-transparent"
                 >Sign Up</a
               >
             </div>
@@ -79,26 +76,32 @@
 
           <!-- AUTH BUTTONS -->
           <div class="auth-btn">
-            <a href="signin.html" class="btn-secondary" id="sign-in">Sign In</a>
-            <a href="signup.html" class="btn-primary" id="sign-up">Sign Up</a>
+            <a href="signin.html" class="btn-secondary">Sign In</a>
+            <a href="signup.html" class="btn-primary">Sign Up</a>
           </div>
 
           <!-- MOBILE MENU -->
-          <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- HERO SECTION -->
       <section class="hero events-hero">
         <div class="hero-container">
           <div class="hero-row">
             <div class="hero-content">
               <span class="hero-badge">
-                <i class="fa-solid fa-calendar"></i> Campus Events
+                <i class="fa-solid fa-calendar" aria-hidden="true"></i> Campus Events
               </span>
 
               <h1 class="hero-title my-2">Discover Events Across Campus</h1>
@@ -128,66 +131,88 @@
               </div>
             </div>
 
-            <!-- HERO CAROUSEL: rotating preview of upcoming events -->
+            <!-- HERO CAROUSEL -->
             <div class="hero-visual">
               <div class="hero-carousel">
-                <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide">
-                  <i class="fa-solid fa-chevron-left"></i>
+                <button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide">
+                  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                 </button>
-                <button class="carousel-arrow carousel-arrow-next" aria-label="Next slide">
-                  <i class="fa-solid fa-chevron-right"></i>
+                <button type="button" class="carousel-arrow carousel-arrow-next" aria-label="Next slide">
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                 </button>
 
                 <div class="carousel-track">
                   <div class="carousel-slide active">
-                    <img src="../assets/img/card1.jpg" alt="CodeStorm hackathon" />
+                    <img
+                      src="../assets/img/card1.jpg"
+                      alt="CodeStorm hackathon"
+                      width="500"
+                      height="333"
+                    />
                     <div class="carousel-caption">
                       <span class="event-type-badge">Hackathon</span>
                       <h4>CodeStorm 24hr Hackathon</h4>
-                      <p><i class="fa-solid fa-calendar"></i> 24 Aug · Main Auditorium</p>
+                      <p><i class="fa-solid fa-calendar" aria-hidden="true"></i> 24 Aug · Main Auditorium</p>
                     </div>
                   </div>
 
                   <div class="carousel-slide">
-                    <img src="../assets/img/card2.jpg" alt="AI & Machine Learning Bootcamp" />
+                    <img
+                      src="../assets/img/card2.jpg"
+                      alt="AI & Machine Learning Bootcamp"
+                      width="500"
+                      height="333"
+                      loading="lazy"
+                    />
                     <div class="carousel-caption">
                       <span class="event-type-badge">Workshop</span>
                       <h4>AI & Machine Learning Bootcamp</h4>
-                      <p><i class="fa-solid fa-calendar"></i> 28 Aug · Seminar Hall</p>
+                      <p><i class="fa-solid fa-calendar" aria-hidden="true"></i> 28 Aug · Seminar Hall</p>
                     </div>
                   </div>
 
                   <div class="carousel-slide">
-                    <img src="../assets/img/card3.jpg" alt="Campus Cultural Fest" />
+                    <img
+                      src="../assets/img/card3.jpg"
+                      alt="Campus Cultural Fest"
+                      width="500"
+                      height="333"
+                      loading="lazy"
+                    />
                     <div class="carousel-caption">
                       <span class="event-type-badge">Cultural</span>
                       <h4>Campus Cultural Fest 2026</h4>
-                      <p><i class="fa-solid fa-calendar"></i> 30 Aug · Open Air Theatre</p>
+                      <p><i class="fa-solid fa-calendar" aria-hidden="true"></i> 30 Aug · Open Air Theatre</p>
                     </div>
                   </div>
                 </div>
 
                 <div class="carousel-dots">
-                  <button class="carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
-                  <button class="carousel-dot" data-slide="1" aria-label="Slide 2"></button>
-                  <button class="carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+                  <button type="button" class="carousel-dot active" aria-label="Slide 1"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 2"></button>
+                  <button type="button" class="carousel-dot" aria-label="Slide 3"></button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="scroll-indicator" data-target="#events-list">
-            <i class="fa-solid fa-chevron-down"></i>
-          </div>
+          <button
+            type="button"
+            class="scroll-indicator"
+            aria-label="Scroll to events list"
+          >
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
         </div>
       </section>
 
       <!-- SEARCH & FILTERS -->
-      <section class="events-filters" id="events-list">
+      <section class="events-filters">
         <div class="events-filters-container">
           <div class="events-search-row">
             <div class="search-bar">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <label for="event-search" class="sr-only">Search events</label>
               <input
                 type="text"
                 id="event-search"
@@ -196,34 +221,35 @@
             </div>
 
             <div class="select-wrap">
+              <label for="event-sort" class="sr-only">Sort events</label>
               <select id="event-sort" class="sort-select">
                 <option value="date">Sort: Upcoming Date</option>
                 <option value="seats">Sort: Seats Available</option>
                 <option value="az">Sort: A-Z</option>
               </select>
-              <i class="fa-solid fa-chevron-down"></i>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
             </div>
           </div>
 
-          <div class="filter-bar" id="event-filters">
-            <button class="filter-chip active" data-filter="all">All Events</button>
-            <button class="filter-chip" data-filter="hackathon">Hackathon</button>
-            <button class="filter-chip" data-filter="workshop">Workshop</button>
-            <button class="filter-chip" data-filter="cultural">Cultural</button>
-            <button class="filter-chip" data-filter="seminar">Seminar</button>
-            <button class="filter-chip" data-filter="sports">Sports</button>
-            <button class="filter-chip" data-filter="networking">Networking</button>
+          <div class="filter-bar" role="group" aria-label="Filter events by category">
+            <button type="button" class="filter-chip active" aria-pressed="true">All Events</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Hackathon</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Workshop</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Cultural</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Seminar</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Sports</button>
+            <button type="button" class="filter-chip" aria-pressed="false">Networking</button>
           </div>
         </div>
       </section>
 
       <!-- EVENTS GRID -->
       <section class="events-section">
-        <div class="events-grid" id="events-grid">
+        <div class="events-grid">
           <!-- EVENT 1 -->
-          <div class="event-card" data-category="hackathon" data-title="codestorm 24hr hackathon" data-date="2026-08-24" data-seats="24">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card1.jpg" alt="CodeStorm hackathon" />
+              <img src="../assets/img/card1.jpg" alt="CodeStorm hackathon" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -232,12 +258,12 @@
               </div>
               <h3>CodeStorm 24hr Hackathon</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 24/08/26, 12:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Main Auditorium</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 24/08/26, 12:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Main Auditorium</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students Only</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 24 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 24 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -246,9 +272,9 @@
           </div>
 
           <!-- EVENT 2 -->
-          <div class="event-card" data-category="workshop" data-title="ai & machine learning bootcamp" data-date="2026-08-28" data-seats="48">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card2.jpg" alt="AI workshop event" />
+              <img src="../assets/img/card2.jpg" alt="AI & Machine Learning Bootcamp" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -257,12 +283,12 @@
               </div>
               <h3>AI & Machine Learning Bootcamp</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 28/08/26, 10:00 AM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students & Teachers</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 28/08/26, 10:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students & Teachers</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 48 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 48 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -271,9 +297,9 @@
           </div>
 
           <!-- EVENT 3 -->
-          <div class="event-card" data-category="cultural" data-title="campus cultural fest 2026" data-date="2026-08-30" data-seats="120">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card3.jpg" alt="Cultural fest" />
+              <img src="../assets/img/card3.jpg" alt="Campus Cultural Fest 2026" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -282,12 +308,12 @@
               </div>
               <h3>Campus Cultural Fest 2026</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 30/08/26, 6:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Open Air Theatre</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 30/08/26, 6:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Open Air Theatre</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Everyone</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 120 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 120 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -296,9 +322,9 @@
           </div>
 
           <!-- EVENT 4 -->
-          <div class="event-card" data-category="hackathon" data-title="web dev sprint" data-date="2026-09-05" data-seats="30">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card1.jpg" alt="Web dev sprint hackathon" />
+              <img src="../assets/img/card1.jpg" alt="Web dev sprint hackathon" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -307,12 +333,12 @@
               </div>
               <h3>Web Dev Sprint</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 05/09/26, 9:00 AM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Computer Lab 2</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 05/09/26, 9:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Computer Lab 2</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students Only</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 30 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 30 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -321,9 +347,9 @@
           </div>
 
           <!-- EVENT 5 -->
-          <div class="event-card" data-category="workshop" data-title="ui/ux design workshop" data-date="2026-09-08" data-seats="40">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card2.jpg" alt="UI/UX design workshop" />
+              <img src="../assets/img/card2.jpg" alt="UI/UX design workshop" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -332,12 +358,12 @@
               </div>
               <h3>UI/UX Design Workshop</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 08/09/26, 11:00 AM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Design Studio</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 08/09/26, 11:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Design Studio</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students Only</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 40 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 40 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -346,9 +372,9 @@
           </div>
 
           <!-- EVENT 6 -->
-          <div class="event-card" data-category="cultural" data-title="inter-college dance battle" data-date="2026-09-12" data-seats="200">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card3.jpg" alt="Inter-college dance battle" />
+              <img src="../assets/img/card3.jpg" alt="Inter-college dance battle" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -357,12 +383,12 @@
               </div>
               <h3>Inter-College Dance Battle</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 12/09/26, 5:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Main Auditorium</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 12/09/26, 5:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Main Auditorium</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Everyone</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 200 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 200 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -371,9 +397,9 @@
           </div>
 
           <!-- EVENT 7 -->
-          <div class="event-card" data-category="seminar" data-title="placement preparation seminar" data-date="2026-09-15" data-seats="150">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card1.jpg" alt="Placement preparation seminar" />
+              <img src="../assets/img/card1.jpg" alt="Placement preparation seminar" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -382,12 +408,12 @@
               </div>
               <h3>Placement Preparation Seminar</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 15/09/26, 2:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Final Year Students</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 15/09/26, 2:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Final Year Students</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 150 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 150 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -396,9 +422,9 @@
           </div>
 
           <!-- EVENT 8 -->
-          <div class="event-card" data-category="sports" data-title="annual sports meet" data-date="2026-09-20" data-seats="500">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card2.jpg" alt="Annual sports meet" />
+              <img src="../assets/img/card2.jpg" alt="Annual sports meet" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -407,12 +433,12 @@
               </div>
               <h3>Annual Sports Meet</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 20/09/26, 8:00 AM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> University Ground</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 20/09/26, 8:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> University Ground</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Everyone</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 500 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 500 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -421,9 +447,9 @@
           </div>
 
           <!-- EVENT 9 -->
-          <div class="event-card" data-category="networking" data-title="startup networking mixer" data-date="2026-09-25" data-seats="80">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card3.jpg" alt="Startup networking mixer" />
+              <img src="../assets/img/card3.jpg" alt="Startup networking mixer" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -432,12 +458,12 @@
               </div>
               <h3>Startup Networking Mixer</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 25/09/26, 4:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Innovation Hub</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 25/09/26, 4:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Innovation Hub</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students Only</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 80 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 80 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -446,9 +472,9 @@
           </div>
 
           <!-- EVENT 10 -->
-          <div class="event-card" data-category="hackathon" data-title="cybersecurity ctf challenge" data-date="2026-10-02" data-seats="36">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card1.jpg" alt="Cybersecurity CTF challenge" />
+              <img src="../assets/img/card1.jpg" alt="Cybersecurity CTF challenge" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -457,12 +483,12 @@
               </div>
               <h3>Cybersecurity CTF Challenge</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 02/10/26, 10:00 AM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Computer Lab 1</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 02/10/26, 10:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Computer Lab 1</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students Only</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 36 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 36 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -471,9 +497,9 @@
           </div>
 
           <!-- EVENT 11 -->
-          <div class="event-card" data-category="workshop" data-title="cloud computing workshop" data-date="2026-10-05" data-seats="45">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card2.jpg" alt="Cloud computing workshop" />
+              <img src="../assets/img/card2.jpg" alt="Cloud computing workshop" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -482,12 +508,12 @@
               </div>
               <h3>Cloud Computing Workshop</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 05/10/26, 1:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students Only</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 05/10/26, 1:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students Only</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 45 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 45 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -496,9 +522,9 @@
           </div>
 
           <!-- EVENT 12 -->
-          <div class="event-card" data-category="cultural" data-title="battle of bands" data-date="2026-10-10" data-seats="180">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card3.jpg" alt="Battle of Bands" />
+              <img src="../assets/img/card3.jpg" alt="Battle of Bands" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -507,12 +533,12 @@
               </div>
               <h3>Battle of Bands</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 10/10/26, 7:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Open Air Theatre</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 10/10/26, 7:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Open Air Theatre</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Everyone</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 180 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 180 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -521,9 +547,9 @@
           </div>
 
           <!-- EVENT 13 -->
-          <div class="event-card" data-category="seminar" data-title="resume & interview skills seminar" data-date="2026-10-14" data-seats="100">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card1.jpg" alt="Resume and interview skills seminar" />
+              <img src="../assets/img/card1.jpg" alt="Resume and interview skills seminar" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -532,12 +558,12 @@
               </div>
               <h3>Resume & Interview Skills Seminar</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 14/10/26, 3:00 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Seminar Hall</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Final Year Students</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 14/10/26, 3:00 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Seminar Hall</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Final Year Students</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 100 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 100 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -546,9 +572,9 @@
           </div>
 
           <!-- EVENT 14 -->
-          <div class="event-card" data-category="sports" data-title="inter-department cricket tournament" data-date="2026-10-18" data-seats="300">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card2.jpg" alt="Inter-department cricket tournament" />
+              <img src="../assets/img/card2.jpg" alt="Inter-department cricket tournament" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -557,12 +583,12 @@
               </div>
               <h3>Inter-Department Cricket Tournament</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 18/10/26, 8:00 AM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> University Ground</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Everyone</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 18/10/26, 8:00 AM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> University Ground</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Everyone</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 300 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 300 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -571,9 +597,9 @@
           </div>
 
           <!-- EVENT 15 -->
-          <div class="event-card" data-category="networking" data-title="alumni networking evening" data-date="2026-10-22" data-seats="60">
+          <div class="event-card">
             <div class="card-image">
-              <img src="../assets/img/card3.jpg" alt="Alumni networking evening" />
+              <img src="../assets/img/card3.jpg" alt="Alumni networking evening" width="500" height="333" loading="lazy" />
             </div>
             <div class="card-body">
               <div class="card-badges">
@@ -582,12 +608,12 @@
               </div>
               <h3>Alumni Networking Evening</h3>
               <div class="card-info">
-                <div class="card-date"><i class="fa-solid fa-calendar"></i> 22/10/26, 5:30 PM</div>
-                <div class="card-venue"><i class="fa-solid fa-location-dot"></i> Innovation Hub</div>
-                <div class="card-eligibility"><i class="fa-solid fa-user-group"></i> Students & Alumni</div>
+                <div class="card-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 22/10/26, 5:30 PM</div>
+                <div class="card-venue"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Innovation Hub</div>
+                <div class="card-eligibility"><i class="fa-solid fa-user-group" aria-hidden="true"></i> Students & Alumni</div>
               </div>
               <div class="card-divider"></div>
-              <div class="seat-status"><p><i class="fa-solid fa-ticket"></i> 60 seats left</p></div>
+              <div class="seat-status"><p><i class="fa-solid fa-ticket" aria-hidden="true"></i> 60 seats left</p></div>
               <div class="card-actions">
                 <a href="#" class="btn-outline">View Details</a>
                 <a href="#" class="btn-solid">Register</a>
@@ -596,21 +622,21 @@
           </div>
         </div>
 
-        <div class="no-results" id="events-no-results">
-          <i class="fa-solid fa-calendar-xmark"></i>
+        <div class="no-results">
+          <i class="fa-solid fa-calendar-xmark" aria-hidden="true"></i>
           <p>No events match your search. Try a different keyword or filter.</p>
         </div>
 
-        <!-- PAGINATION (page number buttons are injected by events.js) -->
-        <div class="pagination" id="events-pagination">
-          <button class="page-btn" id="events-prev" disabled>
-            <i class="fa-solid fa-chevron-left"></i>
+        <!-- PAGINATION -->
+        <nav class="pagination" aria-label="Events pagination">
+          <button type="button" class="page-btn" aria-label="Previous page" disabled>
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           </button>
-          <div class="pagination-numbers" id="events-page-numbers"></div>
-          <button class="page-btn" id="events-next">
-            <i class="fa-solid fa-chevron-right"></i>
+          <div class="pagination-numbers"></div>
+          <button type="button" class="page-btn" aria-label="Next page">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
           </button>
-        </div>
+        </nav>
       </section>
 
       <!-- CTA SECTION -->
@@ -638,7 +664,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="home.html#home" class="footer-logo">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             Campus<span>Connect</span>
           </a>
 
@@ -648,20 +674,20 @@
           </p>
 
           <div class="footer-social">
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
+            <a href="#" aria-label="CampusConnect on GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
+            <a href="#" aria-label="CampusConnect on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
+            <a href="#" aria-label="CampusConnect on Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-x-twitter"></i>
+            <a href="#" aria-label="CampusConnect on X (Twitter)">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -689,17 +715,17 @@
           <h3>Contact</h3>
 
           <p>
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             support@campusconnect.edu
           </p>
 
           <p>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
             +91 XXX
           </p>
 
           <p>
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             Graphic Era Hill University
           </p>
         </div>
@@ -710,7 +736,8 @@
       </div>
     </footer>
 
-    <script src="js/home.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/events.js"></script>
   </body>
 </html>

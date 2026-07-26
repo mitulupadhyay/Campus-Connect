@@ -47,9 +47,6 @@
 .card:hover .card-image img{
         @apply scale-[1.06];
     }
-.card-image img:hover{
-    @apply scale-[1.04];
-}
 
 .card-badges{
         @apply flex gap-3.5;
@@ -99,9 +96,14 @@
         ease-out;
     }
 
-.btn-outline:hover{
+.btn-outline:hover,
+.btn-outline:focus-visible{
         @apply bg-blue-100
         text-secondary;
+    }
+
+.btn-outline:focus-visible{
+        @apply outline-2 outline-offset-2 outline-primary;
     }
 
 .btn-solid{
@@ -118,8 +120,13 @@
         ease-out;
     }
 
-.btn-solid:hover{
+.btn-solid:hover,
+.btn-solid:focus-visible{
         @apply bg-primary-hover;
+    }
+
+.btn-solid:focus-visible{
+        @apply outline-2 outline-offset-2 outline-primary;
     }
 
 .seat-status{
@@ -138,7 +145,7 @@
        /* EVENT CARD */
 
 .event-card{
-        @apply card min-h-[450px] shadow-lg;
+        @apply card min-h-[450px];
     }
 .event-card:hover{
     @apply shadow-xl -translate-y-2 scale-[1.01];
@@ -152,7 +159,7 @@
        /* CLUB CARD  */
 
 .club-card{
-        @apply card p-7 shadow-lg;
+        @apply card p-7;
     }
 
 .club-logo{
@@ -233,8 +240,13 @@
         ease-out;
     }
 
-.club-btn:hover{
+.club-btn:hover,
+.club-btn:focus-visible{
         @apply gap-3;
+    }
+
+.club-btn:focus-visible{
+        @apply outline-2 outline-offset-2 outline-primary rounded-sm;
     }
 
 
@@ -245,8 +257,7 @@
         p-7
         text-center
         grid
-        gap-2
-        shadow-lg;
+        gap-2;
     }
 
 .feature-icon{
@@ -272,7 +283,7 @@
        /* TESTIMONIAL CARD  */
 
 .testimonial-card{
-        @apply card p-8 shadow-lg;
+        @apply card p-8;
     }
 
 .testimonial-rating{

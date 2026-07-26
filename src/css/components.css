@@ -44,11 +44,16 @@
         ease-out;
     }
 
-.btn-primary:hover{
+.btn-primary:hover,
+.btn-primary:focus-visible{
         @apply bg-transparent
         text-primary
         border-primary
         rounded-[999px];
+    }
+
+.btn-primary:focus-visible{
+        @apply outline-2 outline-offset-2 outline-primary;
     }
 
     
@@ -68,10 +73,15 @@
         ease-out;
     }
 
-.btn-secondary:hover{
+.btn-secondary:hover,
+.btn-secondary:focus-visible{
         @apply bg-primary
         border-primary
         rounded-[999px];
+    }
+
+.btn-secondary:focus-visible{
+        @apply outline-2 outline-offset-2 outline-white;
     }
 
 
@@ -110,12 +120,17 @@
     ease-out;
 }
 
-.btn-cta-primary:hover{
+.btn-cta-primary:hover,
+.btn-cta-primary:focus-visible{
     @apply bg-transparent
     border border-primary
     text-primary
     shadow-lg
     -translate-y-1;
+}
+
+.btn-cta-primary:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary;
 }
 
 .btn-cta-secondary{
@@ -130,10 +145,15 @@
     ease-out;
 }
 
-.btn-cta-secondary:hover{
+.btn-cta-secondary:hover,
+.btn-cta-secondary:focus-visible{
     @apply bg-white
     text-secondary
     -translate-y-1;
+}
+
+.btn-cta-secondary:focus-visible{
+    @apply outline-2 outline-offset-2 outline-white;
 }
 
 
@@ -151,10 +171,15 @@
     ease-out;
 }
 
-.btn-view-all:hover{
+.btn-view-all:hover,
+.btn-view-all:focus-visible{
     @apply bg-secondary-hover
     text-primary
     -translate-y-1;
+}
+
+.btn-view-all:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary;
 }
 
 .btn-view-all i{
@@ -226,7 +251,7 @@
 }
 
 
-   /* Compact Page Hero (Events / Clubs / About) */
+   /* Compact Page Hero "- Events / Clubs / About  */
 
 .scroll-indicator{
     @apply flex justify-center
@@ -245,10 +270,6 @@
 }
 
 
-   /* Hero Row Layout Helper — splits a hero into a text column + a
-      visual column. Used on any hero that has a carousel/side visual
-      (Events, Clubs). Keep the scroll-indicator OUTSIDE this row so it
-      always centers beneath the full hero, not squeezed between columns. */
 
 .hero-row{
     @apply flex flex-col lg:flex-row
@@ -258,7 +279,7 @@
 }
 
 
-   /* Hero Visual / Carousel (Events & Clubs) */
+   /* Hero Visual  Carousel :- Events & Clubs */
 
 .hero-visual{
     @apply hidden lg:flex
@@ -337,6 +358,10 @@
     bg-primary;
 }
 
+.carousel-dot:focus-visible{
+    @apply outline-2 outline-offset-2 outline-white;
+}
+
 
    /* Carousel Arrows (prev/next) */
 
@@ -356,9 +381,14 @@
     ease-out;
 }
 
-.carousel-arrow:hover{
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible{
     @apply bg-primary
     border-primary;
+}
+
+.carousel-arrow:focus-visible{
+    @apply outline-2 outline-offset-2 outline-white;
 }
 
 .carousel-arrow-prev{
@@ -426,10 +456,15 @@
     ease-out;
 }
 
-.filter-chip:hover{
+.filter-chip:hover,
+.filter-chip:focus-visible{
     @apply border-primary
     text-primary
     -translate-y-0.5;
+}
+
+.filter-chip:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary;
 }
 
 .filter-chip.active{
@@ -476,7 +511,7 @@
 }
 
 
-   /* Filter Toolbar Layout Helper */
+   /* Filter Toolbar Layout */
 
 .toolbar{
     @apply flex flex-col md:flex-row
@@ -512,9 +547,14 @@
     ease-out;
 }
 
-.page-btn:hover{
+.page-btn:hover,
+.page-btn:focus-visible{
     @apply border-primary
     text-primary;
+}
+
+.page-btn:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary;
 }
 
 .page-btn.active{
@@ -534,7 +574,7 @@
 }
 
 
-   /* No Results (empty state for search / filter) */
+   /* No Results :- empty state for search / filter */
 
 .no-results{
     @apply hidden
@@ -556,7 +596,7 @@
 }
 
 
-   /* Form Elements (Auth Pages) */
+   /* Form Elements :- Auth Pages*/
 
 .form-group{
     @apply flex flex-col
@@ -612,8 +652,13 @@
     ease-out;
 }
 
-.password-toggle:hover{
+.password-toggle:hover,
+.password-toggle:focus-visible{
     @apply text-primary;
+}
+
+.password-toggle:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary rounded-sm;
 }
 
 .form-options{
@@ -641,9 +686,14 @@
     ease-out;
 }
 
-.form-link:hover{
+.form-link:hover,
+.form-link:focus-visible{
     @apply text-primary-hover
     underline;
+}
+
+.form-link:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary rounded-sm;
 }
 
 
@@ -653,8 +703,7 @@
     @apply card
     w-full max-w-[440px]
     mx-auto
-    p-8 md:p-9
-    shadow-lg;
+    p-8 md:p-9;
 }
 
 .auth-icon{
@@ -716,10 +765,15 @@
     ease-out;
 }
 
-.btn-google:hover{
+.btn-google:hover,
+.btn-google:focus-visible{
     @apply border-secondary
     bg-slate-50
     -translate-y-0.5;
+}
+
+.btn-google:focus-visible{
+    @apply outline-2 outline-offset-2 outline-primary;
 }
 
 .auth-footer{

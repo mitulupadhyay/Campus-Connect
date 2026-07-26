@@ -86,4 +86,21 @@ img{
     @apply py-20;
 }
 
+
+   /* ACCESSIBILITY */
+
+.skip-link{
+    @apply fixed top-2 left-2 z-[2000]
+    -translate-y-20
+    bg-primary text-white
+    text-sm font-semibold
+    px-4 py-2.5
+    rounded-md
+    transition-transform duration-200 ease-out;
+}
+
+.skip-link:focus{
+    @apply translate-y-0;
+}
+
 }

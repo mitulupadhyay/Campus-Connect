@@ -8,7 +8,7 @@
 }
 
 
-   /* Club Spotlight Slide (rotating carousel on the Clubs hero) */
+   /* Club Spotlight Slide :- Carousel */
 
 .carousel-slide.club-spotlight{
     @apply flex flex-col items-center justify-center

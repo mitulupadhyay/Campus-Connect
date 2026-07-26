@@ -59,8 +59,7 @@
 
 .mission-vision-card{
     @apply card
-    p-8 md:p-10
-    shadow-lg;
+    p-8 md:p-10;
 }
 
 .mission-vision-card:hover{
@@ -135,13 +134,12 @@
 }
 
 
-   /* STAT CARD (About Stats grid) */
+   /* STAT CARD :- About Stats grid */
 
 .stat-card{
     @apply card
     p-8
-    text-center
-    shadow-lg;
+    text-center;
 }
 
 .stat-card:hover{
@@ -162,7 +160,7 @@
 }
 
 
-   /* STEP NUMBER (How It Works) */
+   /* STEP NUMBER :- How It Works */
 
 .step-number{
     @apply icon-circle
@@ -216,7 +214,14 @@
     px-6 py-5
     text-left
     text-heading
-    font-semibold;
+    font-semibold
+    transition-colors
+    duration-300
+    ease-out;
+}
+
+.faq-question:focus-visible{
+    @apply outline-2 outline-offset-[-2px] outline-primary rounded-2xl;
 }
 
 .faq-question i{

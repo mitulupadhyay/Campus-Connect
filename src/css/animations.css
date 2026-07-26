@@ -1,0 +1,28 @@
+@layer components {
+
+.reveal,
+[data-reveal]{
+    @apply opacity-0
+    translate-y-[18px]
+    transition-[opacity,transform]
+    duration-[600ms]
+    ease-out;
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible,
+[data-reveal].is-visible{
+    @apply opacity-100 translate-y-0;
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .reveal,
+    [data-reveal]{
+        @apply opacity-100 translate-y-0;
+        transition: none;
+    }
+
+}
+
+}

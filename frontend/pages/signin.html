@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+    <link rel="icon" href="../assets/img/favicon.png" type="image/png" />
     <title>Sign In | Campus Connect</title>
     <link
       rel="stylesheet"
@@ -19,6 +19,8 @@
     <link href="../dist/output.css" rel="stylesheet" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- NAVBAR -->
 
     <header>
@@ -27,51 +29,46 @@
           <!-- WEBSITE LOGO -->
           <div class="web-logo">
             <a href="home.html#home" class="group">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
               Campus<span>Connect</span>
             </a>
           </div>
 
           <!-- NAVIGATION LINKS -->
-          <div class="nav-links">
+          <div class="nav-links" id="primary-navigation">
             <ul>
               <li>
                 <a href="home.html#home">
-                  <i class="fa-solid fa-house"></i>
+                  <i class="fa-solid fa-house" aria-hidden="true"></i>
                   Home
                 </a>
               </li>
 
               <li>
                 <a href="events.html">
-                  <i class="fa-solid fa-calendar"></i>
+                  <i class="fa-solid fa-calendar" aria-hidden="true"></i>
                   Events
                 </a>
               </li>
 
               <li>
                 <a href="clubs.html">
-                  <i class="fa-solid fa-people-group"></i>
+                  <i class="fa-solid fa-people-group" aria-hidden="true"></i>
                   Clubs
                 </a>
               </li>
 
               <li>
                 <a href="aboutus.html">
-                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
                   About Us
                 </a>
               </li>
             </ul>
 
             <div class="mobile-auth">
-              <a href="signin.html" id="mobile-sign-in" class="btn-secondary"
-                >Sign In</a
-              >
-              <a
-                href="signup.html"
-                id="mobile-sign-up"
-                class="btn-primary hover:bg-transparent"
+              <a href="signin.html" class="btn-secondary">Sign In</a>
+              <a href="signup.html" class="btn-primary hover:bg-transparent"
                 >Sign Up</a
               >
             </div>
@@ -79,36 +76,42 @@
 
           <!-- AUTH BUTTONS -->
           <div class="auth-btn">
-            <a href="signin.html" class="btn-secondary" id="sign-in">Sign In</a>
-            <a href="signup.html" class="btn-primary" id="sign-up">Sign Up</a>
+            <a href="signin.html" class="btn-secondary">Sign In</a>
+            <a href="signup.html" class="btn-primary">Sign Up</a>
           </div>
 
           <!-- MOBILE MENU -->
-          <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- SIGN IN -->
       <section class="auth-page">
         <div class="auth-card">
           <div class="auth-header">
             <div class="auth-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             </div>
             <h1>Welcome Back</h1>
             <p>Sign in to keep up with your campus events and clubs.</p>
           </div>
 
-          <form id="signin-form" novalidate>
+          <form novalidate>
             <!-- EMAIL -->
             <div class="form-group">
               <label class="form-label" for="signin-email">Email</label>
               <div class="input-wrap">
-                <i class="fa-solid fa-envelope input-icon"></i>
+                <i class="fa-solid fa-envelope input-icon" aria-hidden="true"></i>
                 <input
                   type="email"
                   id="signin-email"
@@ -124,7 +127,7 @@
             <div class="form-group">
               <label class="form-label" for="signin-password">Password</label>
               <div class="input-wrap">
-                <i class="fa-solid fa-lock input-icon"></i>
+                <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
                 <input
                   type="password"
                   id="signin-password"
@@ -133,7 +136,14 @@
                   autocomplete="current-password"
                   required
                 />
-                <i class="fa-solid fa-eye password-toggle" data-target="signin-password"></i>
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Show password"
+                  aria-pressed="false"
+                >
+                  <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
 
@@ -151,7 +161,7 @@
             <div class="auth-divider">or continue with</div>
 
             <button type="button" class="btn-google">
-              <i class="fa-brands fa-google"></i>
+              <i class="fa-brands fa-google" aria-hidden="true"></i>
               Continue with Google
             </button>
           </form>
@@ -171,7 +181,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <a href="home.html#home" class="footer-logo">
-            <i class="fa-solid fa-graduation-cap"></i>
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             Campus<span>Connect</span>
           </a>
 
@@ -181,20 +191,20 @@
           </p>
 
           <div class="footer-social">
-            <a href="#">
-              <i class="fa-brands fa-github"></i>
+            <a href="#" aria-label="CampusConnect on GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-linkedin-in"></i>
+            <a href="#" aria-label="CampusConnect on LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-instagram"></i>
+            <a href="#" aria-label="CampusConnect on Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
 
-            <a href="#">
-              <i class="fa-brands fa-x-twitter"></i>
+            <a href="#" aria-label="CampusConnect on X (Twitter)">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -222,17 +232,17 @@
           <h3>Contact</h3>
 
           <p>
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             support@campusconnect.edu
           </p>
 
           <p>
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
             +91 XXX
           </p>
 
           <p>
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             Graphic Era Hill University
           </p>
         </div>
@@ -243,7 +253,8 @@
       </div>
     </footer>
 
-    <script src="js/home.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/auth.js"></script>
   </body>
 </html>

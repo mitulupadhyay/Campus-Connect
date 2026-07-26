@@ -1,9 +1,5 @@
 @layer components {
 
-   /* SIGN IN PAGE */
-   /* .auth-page is the shared centered layout for both Sign In and
-      Sign Up (see .auth-page-signup in signup.css for its one
-      override). The ::before/::after blobs are purely decorative. */
 
 .auth-page{
     @apply min-h-screen
