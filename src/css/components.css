@@ -661,6 +661,55 @@
     @apply outline-2 outline-offset-2 outline-primary rounded-sm;
 }
 
+   /* Role Select (Sign In / Sign Up) */
+   /* An accessible radio-group styled as a card grid, so the user
+      picks Student / Club Organizer / Faculty / Admin before signing
+      in or creating an account. */
+
+.role-select{
+    @apply grid grid-cols-2
+    gap-2.5;
+}
+
+.role-option{
+    @apply relative flex flex-col items-center justify-center
+    gap-1.5
+    px-2 py-3
+    rounded-xl
+    border border-border
+    bg-background
+    text-muted
+    text-center
+    cursor-pointer
+    transition-all duration-200 ease-out
+    has-[:checked]:border-primary
+    has-[:checked]:bg-primary/5
+    has-[:checked]:text-primary
+    has-[:focus-visible]:outline-2
+    has-[:focus-visible]:outline-offset-2
+    has-[:focus-visible]:outline-primary;
+}
+
+.role-option:hover{
+    @apply border-primary/40
+    text-heading;
+}
+
+.role-option input{
+    @apply sr-only;
+}
+
+.role-option i{
+    @apply text-lg
+    transition-colors duration-200 ease-out;
+}
+
+.role-option span{
+    @apply text-xs
+    font-semibold
+    leading-tight;
+}
+
 .form-options{
     @apply flex items-center justify-between
     text-sm

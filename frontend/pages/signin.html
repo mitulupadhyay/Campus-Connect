@@ -107,6 +107,36 @@
           </div>
 
           <form novalidate>
+            <!-- ROLE -->
+            <div class="form-group">
+              <label class="form-label" id="signin-role-label">Continue as</label>
+              <div class="role-select" role="radiogroup" aria-labelledby="signin-role-label">
+                <label class="role-option">
+                  <input type="radio" name="role" value="student" checked />
+                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                  <span>Student</span>
+                </label>
+
+                <label class="role-option">
+                  <input type="radio" name="role" value="organizer" />
+                  <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+                  <span>Club Organizer</span>
+                </label>
+
+                <label class="role-option">
+                  <input type="radio" name="role" value="faculty" />
+                  <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                  <span>Faculty</span>
+                </label>
+
+                <label class="role-option">
+                  <input type="radio" name="role" value="admin" />
+                  <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+                  <span>Admin</span>
+                </label>
+              </div>
+            </div>
+
             <!-- EMAIL -->
             <div class="form-group">
               <label class="form-label" for="signin-email">Email</label>

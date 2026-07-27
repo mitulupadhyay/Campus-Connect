@@ -133,11 +133,19 @@
     }
 
     .nav-links{
-        @apply hidden
-        absolute top-[70px] left-0
+        @apply absolute top-[70px] left-0
+        flex flex-col
         w-full
         bg-secondary
-        flex-col;
+        shadow-lg shadow-black/20
+        overflow-hidden
+        max-h-0
+        opacity-0
+        -translate-y-3
+        pointer-events-none
+        transition-[max-height,opacity,transform]
+        duration-[350ms]
+        ease-out;
     }
 
     .nav-links ul{
@@ -149,7 +157,10 @@
     }
 
     .nav-links.active{
-        @apply flex justify-center;
+        @apply max-h-[28rem]
+        opacity-100
+        translate-y-0
+        pointer-events-auto;
     }
 
     .auth-btn{
@@ -160,8 +171,26 @@
         @apply block ml-auto;
     }
 
+    .menu-toggle i{
+        @apply inline-block
+        transition-transform duration-300 ease-out;
+    }
+
+    .menu-toggle.active i{
+        @apply rotate-90;
+    }
+
     .mobile-auth{
         @apply flex flex-col gap-2.5 p-5;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce){
+
+    .nav-links,
+    .menu-toggle i{
+        transition: none;
     }
 
 }
