@@ -57,7 +57,7 @@
 
     // If the viewport grows back to desktop size, reset the mobile menu
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 768 && navLinks.classList.contains("active")) {
+        if (window.innerWidth > 1023 && navLinks.classList.contains("active")) {
             closeMenu();
         }
     });

@@ -113,20 +113,8 @@
 
 
    /* RESPONSIVE */
-
-@media (max-width: 900px){
-
-    .nav-links ul{
-        @apply gap-2;
-    }
-
-    .nav-links a{
-        @apply px-3;
-    }
-
-}
-
-@media (max-width: 768px){
+   
+@media (max-width: 1023px){
 
     .navbar-container{
         @apply px-5;
