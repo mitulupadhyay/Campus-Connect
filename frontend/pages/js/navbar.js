@@ -1,67 +1,101 @@
 // navbar.js
 
+
 // Mobile Menu Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.getElementById("primary-navigation");
 
-(() => {
-    const toggleBtn = document.querySelector(".menu-toggle");
-    const navLinks = document.getElementById("primary-navigation");
+if (menuToggle && navLinks) {
 
-    if (!toggleBtn || !navLinks) return;
+    // hamburger icon
+    const menuIcon = menuToggle.querySelector("i");
 
-    const icon = toggleBtn.querySelector("i");
 
-    const openMenu = () => {
-        navLinks.classList.add("active");
-        toggleBtn.classList.add("active");
-        toggleBtn.setAttribute("aria-expanded", "true");
-        toggleBtn.setAttribute("aria-label", "Close navigation menu");
-        icon.classList.replace("fa-bars", "fa-xmark");
-    };
+    // Open / close menu
+    menuToggle.addEventListener("click", () => {
 
-    const closeMenu = () => {
-        navLinks.classList.remove("active");
-        toggleBtn.classList.remove("active");
-        toggleBtn.setAttribute("aria-expanded", "false");
-        toggleBtn.setAttribute("aria-label", "Open navigation menu");
-        icon.classList.replace("fa-xmark", "fa-bars");
-    };
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
 
-    toggleBtn.addEventListener("click", () => {
-        const isOpen = navLinks.classList.contains("active");
-        isOpen ? closeMenu() : openMenu();
+        // Change hamburger to X
+        if (navLinks.classList.contains("active")) {
+
+            menuIcon.classList.replace("fa-bars", "fa-xmark");
+
+        } else {
+
+            menuIcon.classList.replace("fa-xmark", "fa-bars");
+
+        }
+
     });
 
-    // Close the menu when a nav link is tapped
-    navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
+
+    // Close menu when navigation link is clicked
+    const navItems = navLinks.querySelectorAll("a");
+
+    navItems.forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+
+            menuIcon.classList.replace("fa-xmark", "fa-bars");
+
+        });
+
     });
 
-    // Close when tapping outside the open menu
+
+    // Close menu when clicking outside
     document.addEventListener("click", (event) => {
-        const isOpen = navLinks.classList.contains("active");
-        if (!isOpen) return;
 
         const clickedInsideMenu = navLinks.contains(event.target);
-        const clickedToggle = toggleBtn.contains(event.target);
+        const clickedMenuButton = menuToggle.contains(event.target);
 
-        if (!clickedInsideMenu && !clickedToggle) closeMenu();
+        if (!clickedInsideMenu && !clickedMenuButton) {
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+
+            menuIcon.classList.replace("fa-xmark", "fa-bars");
+
+        }
+
     });
 
-    // Close on Escape, and return focus to the toggle button
+
+    // Close menu with Escape
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && navLinks.classList.contains("active")) {
-            closeMenu();
-            toggleBtn.focus();
+
+        if (event.key === "Escape") {
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+
+            menuIcon.classList.replace("fa-xmark", "fa-bars");
+
         }
+
     });
 
-    // If the viewport grows back to desktop size, reset the mobile menu
+
+    // Close menu when switching to desktop
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 1023 && navLinks.classList.contains("active")) {
-            closeMenu();
+
+        if (window.innerWidth > 1023) {
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+
+            menuIcon.classList.replace("fa-xmark", "fa-bars");
+
         }
+
     });
-})();
+
+}
 
 
 // TODO: Sticky Navbar on Scroll
