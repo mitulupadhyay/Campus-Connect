@@ -151,6 +151,7 @@
                   required
                 />
               </div>
+              <p class="form-error" id="signup-name-error"></p>
             </div>
 
             <!-- EMAIL -->
@@ -167,6 +168,7 @@
                   required
                 />
               </div>
+              <p class="form-error" id="signup-email-error"></p>
             </div>
 
             <!-- PASSWORD -->
@@ -191,6 +193,11 @@
                   <i class="fa-solid fa-eye" aria-hidden="true"></i>
                 </button>
               </div>
+              <div class="password-strength">
+                <div class="password-strength-bar" id="password-strength-bar"></div>
+              </div>
+              <p class="password-strength-text" id="password-strength-text"></p>
+              <p class="form-error" id="signup-password-error"></p>
             </div>
 
             <!-- CONFIRM PASSWORD -->
@@ -215,14 +222,16 @@
                   <i class="fa-solid fa-eye" aria-hidden="true"></i>
                 </button>
               </div>
+              <p class="form-error" id="signup-confirm-password-error"></p>
             </div>
 
             <div class="form-options">
               <label class="checkbox-wrap">
-                <input type="checkbox" required />
+                <input type="checkbox" id="signup-terms" required />
                 I agree to the Terms & Privacy Policy
               </label>
             </div>
+            <p class="form-error" id="signup-terms-error"></p>
 
             <button type="submit" class="btn-primary w-full">Create Account</button>
 

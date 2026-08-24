@@ -4,4 +4,40 @@
     @apply max-w-[460px];
 }
 
+
+   /* Password Strength Meter */
+
+.password-strength{
+    @apply w-full h-1.5
+    rounded-full
+    bg-border
+    overflow-hidden
+    mt-2;
+}
+
+.password-strength-bar{
+    @apply h-full
+    rounded-full
+    bg-error
+    transition-all
+    duration-300
+    ease-out;
+    width: 0%;
+}
+
+.password-strength-bar.strength-medium{
+    @apply bg-warning;
+}
+
+.password-strength-bar.strength-strong{
+    @apply bg-success;
+}
+
+.password-strength-text{
+    @apply text-xs
+    text-muted
+    mt-1.5
+    mb-1;
+}
+
 }

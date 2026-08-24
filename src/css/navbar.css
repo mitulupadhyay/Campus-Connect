@@ -105,6 +105,31 @@
 }
 
 
+   /* SIGNED IN STATE (demo only) */
+
+.nav-greeting{
+    @apply text-white
+    text-sm
+    font-semibold
+    whitespace-nowrap;
+}
+
+.nav-user-info{
+    @apply flex items-center gap-2.5;
+}
+
+.nav-avatar{
+    @apply flex items-center justify-center
+    shrink-0
+    w-9 h-9
+    rounded-full
+    bg-primary
+    text-white
+    text-sm font-bold
+    uppercase;
+}
+
+
    /* SCROLLED STATE */
 
 .navbar.scrolled{

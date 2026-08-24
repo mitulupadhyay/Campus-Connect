@@ -643,6 +643,17 @@
     shadow-sm;
 }
 
+.form-input.input-error{
+    @apply border-error;
+}
+
+.form-error{
+    @apply text-error
+    text-xs
+    font-medium
+    min-h-[16px];
+}
+
 .password-toggle{
     @apply absolute right-4
     text-muted
