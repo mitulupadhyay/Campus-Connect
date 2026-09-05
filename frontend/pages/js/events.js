@@ -73,6 +73,8 @@ if (eventCards.length > 0) {
 
     const searchInput = document.getElementById("event-search");
     const sortSelect = document.getElementById("event-sort");
+    const dateFilterSelect = document.getElementById("event-date-filter");
+    const audienceFilterSelect = document.getElementById("event-audience-filter");
     const filterChips = document.querySelectorAll(".events-filters .filter-chip");
     const paginationNumbers = document.querySelector(".pagination-numbers");
     const prevPageBtn = document.querySelector(".pagination .page-btn[aria-label='Previous page']");
@@ -141,15 +143,18 @@ if (eventCards.length > 0) {
 
         const savedEvents = getSavedEvents();
         const index = savedEvents.indexOf(event.title);
+        const icon = button.querySelector("i");
 
         if (index === -1) {
             savedEvents.push(event.title);
             button.classList.add("bookmarked");
             button.setAttribute("aria-pressed", "true");
+            if (icon) icon.className = "fa-solid fa-heart";
         } else {
             savedEvents.splice(index, 1);
             button.classList.remove("bookmarked");
             button.setAttribute("aria-pressed", "false");
+            if (icon) icon.className = "fa-regular fa-heart";
         }
 
         saveSavedEvents(savedEvents);
@@ -172,12 +177,13 @@ if (eventCards.length > 0) {
         bookmarkBtn.type = "button";
         bookmarkBtn.className = "bookmark-btn";
         bookmarkBtn.setAttribute("aria-label", "Save event");
-        bookmarkBtn.innerHTML = '<i class="fa-solid fa-heart" aria-hidden="true"></i>';
 
         if (getSavedEvents().includes(event.title)) {
+            bookmarkBtn.innerHTML = '<i class="fa-solid fa-heart" aria-hidden="true"></i>';
             bookmarkBtn.classList.add("bookmarked");
             bookmarkBtn.setAttribute("aria-pressed", "true");
         } else {
+            bookmarkBtn.innerHTML = '<i class="fa-regular fa-heart" aria-hidden="true"></i>';
             bookmarkBtn.setAttribute("aria-pressed", "false");
         }
 
@@ -191,6 +197,63 @@ if (eventCards.length > 0) {
 
     });
 
+    // Returns true if the given event date falls within "This Week" or
+    // "This Month" from right now. Kept simple: "This Week" is a rolling
+    // 7 days from today, "This Month" is the current calendar month.
+    function matchesDateFilter(eventDate, filterValue) {
+
+        if (filterValue === "any" || !filterValue) {
+            return true;
+        }
+
+        const now = new Date();
+        const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        if (filterValue === "week") {
+
+            const weekFromNow = new Date(startOfToday);
+            weekFromNow.setDate(weekFromNow.getDate() + 7);
+
+            return eventDate >= startOfToday && eventDate < weekFromNow;
+
+        }
+
+        if (filterValue === "month") {
+
+            return eventDate.getFullYear() === now.getFullYear() &&
+                eventDate.getMonth() === now.getMonth();
+
+        }
+
+        return true;
+
+    }
+
+    // Returns true if the event's eligibility text matches the chosen audience
+    function matchesAudienceFilter(eligibilityText, filterValue) {
+
+        if (filterValue === "any" || !filterValue) {
+            return true;
+        }
+
+        const eligibilityLower = eligibilityText.toLowerCase();
+
+        if (filterValue === "students") {
+            return eligibilityLower.includes("student");
+        }
+
+        if (filterValue === "teachers") {
+            return eligibilityLower.includes("teacher");
+        }
+
+        if (filterValue === "everyone") {
+            return eligibilityLower.includes("everyone");
+        }
+
+        return true;
+
+    }
+
     // Returns only the events that match the search box and filter chip
 
     function getVisibleEvents() {
@@ -198,6 +261,16 @@ if (eventCards.length > 0) {
         let searchTerm = "";
         if (searchInput) {
             searchTerm = searchInput.value.trim().toLowerCase();
+        }
+
+        let dateFilterValue = "any";
+        if (dateFilterSelect) {
+            dateFilterValue = dateFilterSelect.value;
+        }
+
+        let audienceFilterValue = "any";
+        if (audienceFilterSelect) {
+            audienceFilterValue = audienceFilterSelect.value;
         }
 
         const filtered = [];
@@ -222,7 +295,10 @@ if (eventCards.length > 0) {
                 matchesSearch = true;
             }
 
-            if (matchesCategory && matchesSearch) {
+            const matchesDate = matchesDateFilter(event.date, dateFilterValue);
+            const matchesAudience = matchesAudienceFilter(event.eligibility, audienceFilterValue);
+
+            if (matchesCategory && matchesSearch && matchesDate && matchesAudience) {
                 filtered.push(event);
             }
 
@@ -239,6 +315,8 @@ if (eventCards.length > 0) {
             filtered.sort((a, b) => b.seats - a.seats);
         } else if (sortValue === "az") {
             filtered.sort((a, b) => a.title.localeCompare(b.title));
+        } else if (sortValue === "date-desc") {
+            filtered.sort((a, b) => b.date - a.date);
         } else {
             filtered.sort((a, b) => a.date - b.date);
         }
@@ -362,6 +440,21 @@ if (eventCards.length > 0) {
         });
     }
 
+    // Re-filter whenever the date or audience dropdown changes
+    if (dateFilterSelect) {
+        dateFilterSelect.addEventListener("change", () => {
+            currentPage = 1;
+            renderEvents();
+        });
+    }
+
+    if (audienceFilterSelect) {
+        audienceFilterSelect.addEventListener("change", () => {
+            currentPage = 1;
+            renderEvents();
+        });
+    }
+
     // Switch category when a filter chip is clicked
     filterChips.forEach((chip) => {
 
@@ -400,6 +493,38 @@ if (eventCards.length > 0) {
             currentPage = currentPage + 1;
             renderEvents();
         });
+    }
+
+    // "Clear Filters" button in the no-results empty state - resets
+    // search, date, and audience, and switches back to All Events
+    const clearFiltersBtn = document.getElementById("clear-filters-btn");
+
+    if (clearFiltersBtn) {
+
+        clearFiltersBtn.addEventListener("click", () => {
+
+            if (searchInput) searchInput.value = "";
+            if (dateFilterSelect) dateFilterSelect.value = "any";
+            if (audienceFilterSelect) audienceFilterSelect.value = "any";
+
+            activeCategory = "All Events";
+
+            filterChips.forEach((chip) => {
+                chip.classList.remove("active");
+                chip.setAttribute("aria-pressed", "false");
+            });
+
+            const allEventsChip = filterChips[0];
+            if (allEventsChip) {
+                allEventsChip.classList.add("active");
+                allEventsChip.setAttribute("aria-pressed", "true");
+            }
+
+            currentPage = 1;
+            renderEvents();
+
+        });
+
     }
 
     // EVENT DETAILS MODAL
@@ -560,17 +685,17 @@ if (eventCards.length > 0) {
 
     }
 
-    // Shows the "successfully registered" toast on the right side of the screen
+    // Shows the "successfully registered" / "registration cancelled" toast
     let toastTimer = null;
 
-    function showRegisterToast(eventTitle) {
+    function showRegisterToast(message) {
 
         const toast = document.getElementById("register-toast");
         const toastText = document.getElementById("register-toast-text");
 
         if (!toast || !toastText) return;
 
-        toastText.textContent = "Successfully registered for " + eventTitle;
+        toastText.textContent = message;
         toast.classList.add("show");
 
         clearTimeout(toastTimer);
@@ -580,13 +705,9 @@ if (eventCards.length > 0) {
 
     }
 
-    // Runs when a visitor clicks Register, either on a card or inside the modal
+    // Runs when a visitor clicks Register/Registered, either on a card
+    // or inside the modal. Clicking again after registering un-registers.
     function registerForEvent(event) {
-
-        // No seats left, so there's nothing to register for
-        if (event.seats === 0) {
-            return;
-        }
 
         const loggedInUser = JSON.parse(localStorage.getItem("campusConnectUser") || "null");
 
@@ -596,23 +717,41 @@ if (eventCards.length > 0) {
         }
 
         const registeredEvents = getRegisteredEvents();
+        const index = registeredEvents.indexOf(event.title);
 
-        // Already registered, so there is nothing more to do
-        if (registeredEvents.includes(event.title)) {
-            return;
+        if (index === -1) {
+
+            // Not registered yet - can't register if there are no seats left
+            if (event.seats === 0) {
+                return;
+            }
+
+            registeredEvents.push(event.title);
+            saveRegisteredEvents(registeredEvents);
+
+            markButtonRegistered(event.registerBtn);
+
+            if (currentModalEvent && currentModalEvent.title === event.title) {
+                markButtonRegistered(modalRegisterBtn);
+            }
+
+            showRegisterToast("Successfully registered for " + event.title);
+
+        } else {
+
+            // Already registered - clicking again cancels the registration
+            registeredEvents.splice(index, 1);
+            saveRegisteredEvents(registeredEvents);
+
+            updateRegisterButton(event.registerBtn, event);
+
+            if (currentModalEvent && currentModalEvent.title === event.title) {
+                updateRegisterButton(modalRegisterBtn, event);
+            }
+
+            showRegisterToast("Registration cancelled for " + event.title);
+
         }
-
-        registeredEvents.push(event.title);
-        saveRegisteredEvents(registeredEvents);
-
-        markButtonRegistered(event.registerBtn);
-
-        // Keep the modal's button in sync if this event is the one open right now
-        if (currentModalEvent && currentModalEvent.title === event.title) {
-            markButtonRegistered(modalRegisterBtn);
-        }
-
-        showRegisterToast(event.title);
 
     }
 
@@ -650,5 +789,21 @@ if (eventCards.length > 0) {
 
     // Show the events when the page loads
     renderEvents();
+
+    // If we got here from a link like events.html?event=Some+Title
+    // (e.g. from the "View Details"/"Register" buttons on the home page),
+    // open that event's modal right away instead of just showing the list.
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedEventTitle = urlParams.get("event");
+
+    if (requestedEventTitle) {
+
+        const requestedEvent = events.find((event) => event.title === requestedEventTitle);
+
+        if (requestedEvent) {
+            openEventModal(requestedEvent);
+        }
+
+    }
 
 }

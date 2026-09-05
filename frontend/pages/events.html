@@ -220,14 +220,38 @@
               />
             </div>
 
-            <div class="select-wrap">
-              <label for="event-sort" class="sr-only">Sort events</label>
-              <select id="event-sort" class="sort-select">
-                <option value="date">Sort: Upcoming Date</option>
-                <option value="seats">Sort: Seats Available</option>
-                <option value="az">Sort: A-Z</option>
-              </select>
-              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            <div class="filter-selects">
+              <div class="select-wrap">
+                <label for="event-sort" class="sr-only">Sort events</label>
+                <select id="event-sort" class="sort-select">
+                  <option value="date">Sort: Soonest</option>
+                  <option value="date-desc">Sort: Latest</option>
+                  <option value="seats">Sort: Most Seats Available</option>
+                  <option value="az">Sort: A-Z</option>
+                </select>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </div>
+
+              <div class="select-wrap">
+                <label for="event-date-filter" class="sr-only">Filter by date</label>
+                <select id="event-date-filter" class="sort-select">
+                  <option value="any">Any Time</option>
+                  <option value="week">This Week</option>
+                  <option value="month">This Month</option>
+                </select>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </div>
+
+              <div class="select-wrap">
+                <label for="event-audience-filter" class="sr-only">Filter by audience</label>
+                <select id="event-audience-filter" class="sort-select">
+                  <option value="any">Any Audience</option>
+                  <option value="students">Students</option>
+                  <option value="teachers">Teachers</option>
+                  <option value="everyone">Everyone</option>
+                </select>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
 
@@ -628,6 +652,7 @@
         <div class="no-results">
           <i class="fa-solid fa-calendar-xmark" aria-hidden="true"></i>
           <p>No events match your search. Try a different keyword or filter.</p>
+          <button type="button" class="btn-outline" id="clear-filters-btn">Clear Filters</button>
         </div>
 
         <!-- PAGINATION -->

@@ -4,7 +4,7 @@
 [data-reveal]{
     @apply opacity-0
     translate-y-[18px]
-    transition-[opacity,transform]
+    transition-[opacity,translate,scale,rotate,box-shadow]
     duration-[600ms]
     ease-out;
     transition-delay: var(--reveal-delay, 0ms);

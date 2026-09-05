@@ -355,7 +355,7 @@ if (clubCards.length > 0) {
 
     });
 
-    // Shows the "you've joined" toast
+    // Shows the "you've joined" / "you've left" toast
     let clubToastTimer = null;
 
     function showClubToast(message) {
@@ -375,27 +375,59 @@ if (clubCards.length > 0) {
 
     }
 
-    // Join button inside the modal
+    // Join button inside the modal - clicking again after joining leaves the club
     if (clubModalJoinBtn) {
 
         clubModalJoinBtn.addEventListener("click", () => {
 
             if (!currentModalClub) return;
 
-            const joinedClubs = getJoinedClubs();
+            // Must be signed in to join a club, same rule as registering for an event
+            const loggedInUser = JSON.parse(localStorage.getItem("campusConnectUser") || "null");
 
-            // Already joined, so there is nothing more to do
-            if (joinedClubs.includes(currentModalClub.name)) {
+            if (!loggedInUser) {
+                window.location.href = "signin.html";
                 return;
             }
 
-            joinedClubs.push(currentModalClub.name);
-            saveJoinedClubs(joinedClubs);
+            const joinedClubs = getJoinedClubs();
+            const index = joinedClubs.indexOf(currentModalClub.name);
 
-            updateJoinButton(currentModalClub);
-            showClubToast("You've joined " + currentModalClub.name + "!");
+            if (index === -1) {
+
+                joinedClubs.push(currentModalClub.name);
+                saveJoinedClubs(joinedClubs);
+
+                updateJoinButton(currentModalClub);
+                showClubToast("You've joined " + currentModalClub.name + "!");
+
+            } else {
+
+                joinedClubs.splice(index, 1);
+                saveJoinedClubs(joinedClubs);
+
+                updateJoinButton(currentModalClub);
+                showClubToast("You've left " + currentModalClub.name + ".");
+
+            }
 
         });
+
+    }
+
+    // If we got here from a link like clubs.html?club=Some+Club
+    // (e.g. from the "Learn More" cards on the home page), open that
+    // club's modal right away instead of just showing the grid.
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedClubName = urlParams.get("club");
+
+    if (requestedClubName) {
+
+        const requestedClub = clubs.find((club) => club.name === requestedClubName);
+
+        if (requestedClub) {
+            openClubModal(requestedClub);
+        }
 
     }
 

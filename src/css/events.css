@@ -29,6 +29,11 @@
     gap-4;
 }
 
+.filter-selects{
+    @apply flex flex-wrap
+    gap-3;
+}
+
 
    /* EVENTS GRID */
 
