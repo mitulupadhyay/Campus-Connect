@@ -36,7 +36,13 @@ if (clubCards.length > 0) {
             name: card.querySelector("h3").textContent.trim(),
             description: card.querySelector(".club-description").textContent.trim(),
             category: card.querySelector(".club-category").textContent.trim(),
-            tags: tagsText
+            tags: tagsText,
+            tagList: Array.from(card.querySelectorAll(".club-tags span")).map((tag) => tag.textContent.trim()),
+            members: card.querySelector(".club-stats .club-stat:nth-child(1) span").textContent.trim(),
+            events: card.querySelector(".club-stats .club-stat:nth-child(2) span").textContent.trim(),
+            rating: card.querySelector(".club-stats .club-stat:nth-child(3) span").textContent.trim(),
+            logoIcon: card.querySelector(".club-logo i").className,
+            learnMoreBtn: card.querySelector(".club-btn")
         };
 
         clubs.push(club);
@@ -212,5 +218,185 @@ if (clubCards.length > 0) {
 
     // Show the clubs first time when the page loads
     renderClubs();
+
+
+    // CLUB DETAILS MODAL
+
+    const clubModalOverlay = document.getElementById("club-modal-overlay");
+    const clubModalClose = document.getElementById("club-modal-close");
+    const clubModalLogo = document.getElementById("club-modal-logo");
+    const clubModalTitle = document.getElementById("club-modal-title");
+    const clubModalDescription = document.getElementById("club-modal-description");
+    const clubModalCategory = document.getElementById("club-modal-category");
+    const clubModalMembers = document.getElementById("club-modal-members");
+    const clubModalEvents = document.getElementById("club-modal-events");
+    const clubModalRating = document.getElementById("club-modal-rating");
+    const clubModalTags = document.getElementById("club-modal-tags");
+    const clubModalJoinBtn = document.getElementById("club-modal-join");
+
+    // Keeps track of which club is currently open in the modal
+    let currentModalClub = null;
+
+    // Remembers what was focused before the modal opened, so we can
+    // put focus back there once the modal closes
+    let clubLastFocusedElement = null;
+
+    function getJoinedClubs() {
+        return JSON.parse(localStorage.getItem("campusConnectJoinedClubs") || "[]");
+    }
+
+    function saveJoinedClubs(joinedList) {
+        localStorage.setItem("campusConnectJoinedClubs", JSON.stringify(joinedList));
+    }
+
+    // Makes the Join button show the right state (Join Club vs Joined)
+    function updateJoinButton(club) {
+
+        if (!clubModalJoinBtn) return;
+
+        const joinedClubs = getJoinedClubs();
+
+        if (joinedClubs.includes(club.name)) {
+            clubModalJoinBtn.textContent = "Joined ✓";
+            clubModalJoinBtn.classList.add("is-registered");
+        } else {
+            clubModalJoinBtn.textContent = "Join Club";
+            clubModalJoinBtn.classList.remove("is-registered");
+        }
+
+    }
+
+    // Fills the modal with one club's info and shows it
+    function openClubModal(club) {
+
+        if (!clubModalOverlay) return;
+
+        currentModalClub = club;
+
+        if (clubModalLogo) {
+            const logoIcon = clubModalLogo.querySelector("i");
+            if (logoIcon) logoIcon.className = club.logoIcon;
+        }
+
+        clubModalTitle.textContent = club.name;
+        clubModalDescription.textContent = club.description;
+        clubModalCategory.textContent = club.category;
+        clubModalMembers.textContent = club.members;
+        clubModalEvents.textContent = club.events;
+        clubModalRating.textContent = club.rating;
+
+        clubModalTags.innerHTML = "";
+        club.tagList.forEach((tag) => {
+            const tagSpan = document.createElement("span");
+            tagSpan.textContent = tag;
+            clubModalTags.appendChild(tagSpan);
+        });
+
+        updateJoinButton(club);
+
+        clubLastFocusedElement = document.activeElement;
+
+        clubModalOverlay.classList.add("show");
+        document.body.style.overflow = "hidden";
+        clubModalClose.focus();
+
+    }
+
+    // Hides the modal
+    function closeClubModal() {
+
+        if (!clubModalOverlay) return;
+
+        clubModalOverlay.classList.remove("show");
+        document.body.style.overflow = "";
+        currentModalClub = null;
+
+        if (clubLastFocusedElement) {
+            clubLastFocusedElement.focus();
+        }
+
+    }
+
+    // Open the modal whenever "Learn More" is clicked on a club card
+    clubs.forEach((club) => {
+
+        if (club.learnMoreBtn) {
+
+            club.learnMoreBtn.addEventListener("click", (clickEvent) => {
+                clickEvent.preventDefault();
+                openClubModal(club);
+            });
+
+        }
+
+    });
+
+    if (clubModalClose) {
+        clubModalClose.addEventListener("click", closeClubModal);
+    }
+
+    // Close the modal when clicking the dark overlay outside the box
+    if (clubModalOverlay) {
+
+        clubModalOverlay.addEventListener("click", (clickEvent) => {
+            if (clickEvent.target === clubModalOverlay) {
+                closeClubModal();
+            }
+        });
+
+    }
+
+    // Close the modal with the Escape key
+    document.addEventListener("keydown", (keyEvent) => {
+
+        if (keyEvent.key === "Escape" && clubModalOverlay && clubModalOverlay.classList.contains("show")) {
+            closeClubModal();
+        }
+
+    });
+
+    // Shows the "you've joined" toast
+    let clubToastTimer = null;
+
+    function showClubToast(message) {
+
+        const toast = document.getElementById("club-toast");
+        const toastText = document.getElementById("club-toast-text");
+
+        if (!toast || !toastText) return;
+
+        toastText.textContent = message;
+        toast.classList.add("show");
+
+        clearTimeout(clubToastTimer);
+        clubToastTimer = setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3500);
+
+    }
+
+    // Join button inside the modal
+    if (clubModalJoinBtn) {
+
+        clubModalJoinBtn.addEventListener("click", () => {
+
+            if (!currentModalClub) return;
+
+            const joinedClubs = getJoinedClubs();
+
+            // Already joined, so there is nothing more to do
+            if (joinedClubs.includes(currentModalClub.name)) {
+                return;
+            }
+
+            joinedClubs.push(currentModalClub.name);
+            saveJoinedClubs(joinedClubs);
+
+            updateJoinButton(currentModalClub);
+            showClubToast("You've joined " + currentModalClub.name + "!");
+
+        });
+
+    }
 
 }

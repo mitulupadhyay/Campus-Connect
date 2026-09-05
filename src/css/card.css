@@ -44,12 +44,40 @@
         ease-out;
     }
 
-.card:hover .card-image img{
+.event-card:hover .card-image img{
         @apply scale-[1.06];
     }
 
 .card-badges{
-        @apply flex gap-3.5;
+        @apply flex items-center gap-3.5;
+    }
+
+.bookmark-btn{
+        @apply ml-auto
+        icon-circle
+        w-8 h-8
+        bg-background
+        text-muted
+        text-sm
+        shrink-0
+        transition-all
+        duration-300
+        ease-out;
+    }
+
+.bookmark-btn:hover,
+.bookmark-btn:focus-visible{
+        @apply bg-primary/10
+        text-primary;
+    }
+
+.bookmark-btn:focus-visible{
+        @apply outline-2 outline-offset-2 outline-primary;
+    }
+
+.bookmark-btn.bookmarked{
+        @apply bg-primary/10
+        text-primary;
     }
 
 .card-body{
@@ -129,6 +157,22 @@
         @apply outline-2 outline-offset-2 outline-primary;
     }
 
+.btn-solid.is-registered{
+        @apply bg-success
+        cursor-default;
+    }
+
+.btn-solid.is-registered:hover{
+        @apply bg-success;
+    }
+
+.btn-solid.is-closed{
+        @apply bg-border
+        text-muted
+        cursor-not-allowed
+        pointer-events-none;
+    }
+
 .seat-status{
         @apply flex items-center gap-2
         my-3.5
@@ -139,6 +183,14 @@
 
 .seat-status i{
         @apply text-primary;
+    }
+
+.seat-status.almost-full{
+        @apply text-warning;
+    }
+
+.seat-status.almost-full i{
+        @apply text-warning;
     }
 
 

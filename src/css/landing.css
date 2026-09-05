@@ -90,6 +90,37 @@
 
    /* UPCOMING EVENTS SECTION  */
 
+   /*  RECOMMENDED FOR YOU SECTION */
+
+.recommended-section{
+    @apply bg-surface
+    py-[40px];
+}
+
+.recommended-empty{
+    @apply flex-col items-center justify-center
+    gap-3
+    max-w-[420px]
+    mx-auto
+    py-10
+    text-center
+    text-muted;
+}
+
+.recommended-empty.hidden{
+    @apply hidden;
+}
+
+.recommended-empty:not(.hidden){
+    @apply flex;
+}
+
+.recommended-empty i{
+    @apply text-4xl
+    text-border;
+}
+
+
 .upcoming-events{
     @apply bg-[#edeef0]
     py-[40px];

@@ -580,6 +580,54 @@
       </div>
     </footer>
 
+    <!-- CLUB DETAILS MODAL -->
+    <div class="event-modal-overlay" id="club-modal-overlay">
+      <div class="event-modal" role="dialog" aria-modal="true" aria-labelledby="club-modal-title">
+        <button type="button" class="event-modal-close" id="club-modal-close" aria-label="Close club details">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+
+        <div class="event-modal-body">
+          <div class="club-logo" id="club-modal-logo">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+          </div>
+
+          <div class="club-info">
+            <h3 id="club-modal-title"></h3>
+            <p class="club-description" id="club-modal-description"></p>
+            <span class="club-category" id="club-modal-category"></span>
+
+            <div class="club-divider"></div>
+
+            <div class="club-stats">
+              <div class="club-stat">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span id="club-modal-members"></span>
+              </div>
+              <div class="club-stat">
+                <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+                <span id="club-modal-events"></span>
+              </div>
+              <div class="club-stat">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <span id="club-modal-rating"></span>
+              </div>
+            </div>
+
+            <div class="club-tags" id="club-modal-tags"></div>
+
+            <button type="button" class="btn-solid w-full" id="club-modal-join">Join Club</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOIN CLUB TOAST -->
+    <div class="toast" id="club-toast" role="status" aria-live="polite">
+      <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+      <p id="club-toast-text"></p>
+    </div>
+
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/clubs.js"></script>

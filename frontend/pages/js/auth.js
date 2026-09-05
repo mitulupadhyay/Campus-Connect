@@ -211,6 +211,23 @@ if (signupName && signupEmail && signupPassword && signupConfirmPassword) {
             termsError.textContent = "";
         }
 
+        // Interests validation - need at least 3 picked
+        const interestCheckboxes = signupForm.querySelectorAll('.interest-option input:checked');
+        const selectedInterests = [];
+
+        interestCheckboxes.forEach((checkbox) => {
+            selectedInterests.push(checkbox.value);
+        });
+
+        const interestsError = document.getElementById("signup-interests-error");
+
+        if (selectedInterests.length < 3) {
+            if (interestsError) interestsError.textContent = "Please select at least 3 interests.";
+            isValid = false;
+        } else if (interestsError) {
+            interestsError.textContent = "";
+        }
+
         if (!isValid) return;
 
         // No backend  we simulate a successful sign up for the demo
@@ -220,11 +237,27 @@ if (signupName && signupEmail && signupPassword && signupConfirmPassword) {
         const user = {
             name: signupName.value.trim(),
             email: signupEmail.value.trim(),
-            role: selectedRole ? selectedRole.value : "student"
+            role: selectedRole ? selectedRole.value : "student",
+            interests: selectedInterests
         };
 
         localStorage.setItem("campusConnectUser", JSON.stringify(user));
-        window.location.href = "home.html";
+
+        // Show a quick success message before sending them to the home page
+        const authHeader = document.querySelector(".auth-header");
+
+        if (authHeader) {
+            authHeader.innerHTML =
+                '<div class="auth-icon auth-icon-success">' +
+                '<i class="fa-solid fa-check" aria-hidden="true"></i>' +
+                "</div>" +
+                "<h1>Account Created!</h1>" +
+                "<p>Welcome to CampusConnect, " + user.name + ". Redirecting you home...</p>";
+        }
+
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 1500);
 
     });
 

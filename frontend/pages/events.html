@@ -239,6 +239,9 @@
             <button type="button" class="filter-chip" aria-pressed="false">Seminar</button>
             <button type="button" class="filter-chip" aria-pressed="false">Sports</button>
             <button type="button" class="filter-chip" aria-pressed="false">Networking</button>
+            <button type="button" class="filter-chip filter-chip-saved" aria-pressed="false">
+              <i class="fa-solid fa-heart" aria-hidden="true"></i> Saved
+            </button>
           </div>
         </div>
       </section>
@@ -735,6 +738,56 @@
         <p>© 2026 CampusConnect. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- EVENT DETAILS MODAL -->
+    <div class="event-modal-overlay" id="event-modal-overlay">
+      <div class="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <button type="button" class="event-modal-close" id="event-modal-close" aria-label="Close event details">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+
+        <div class="event-modal-image">
+          <img id="event-modal-img" src="" alt="" />
+        </div>
+
+        <div class="event-modal-body">
+          <div class="card-badges">
+            <span class="event-type-badge" id="event-modal-category"></span>
+            <span class="badge-gray" id="event-modal-club"></span>
+          </div>
+
+          <h3 id="event-modal-title"></h3>
+
+          <div class="card-info">
+            <div class="card-date">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i> <span id="event-modal-date"></span>
+            </div>
+            <div class="card-venue">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span id="event-modal-venue"></span>
+            </div>
+            <div class="card-eligibility">
+              <i class="fa-solid fa-user-group" aria-hidden="true"></i> <span id="event-modal-eligibility"></span>
+            </div>
+          </div>
+
+          <div class="card-divider"></div>
+
+          <div class="seat-status">
+            <p><i class="fa-solid fa-ticket" aria-hidden="true"></i> <span id="event-modal-seats"></span></p>
+          </div>
+
+          <div class="card-actions">
+            <a href="#" class="btn-solid" id="event-modal-register">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGISTRATION SUCCESS TOAST -->
+    <div class="toast" id="register-toast" role="status" aria-live="polite">
+      <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+      <p id="register-toast-text"></p>
+    </div>
 
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
