@@ -165,12 +165,12 @@ Campus-Connect/
 
 | Page | Preview |
 |---|---|
-| Landing Page | _add screenshot_ |
-| Events | _add screenshot_ |
-| Clubs | _add screenshot_ |
-| About | _add screenshot_ |
-| Sign In | _add screenshot_ |
-| Sign Up | _add screenshot_ |
+| Landing Page | ![Landing Page](project%20images/landing.png) |
+| Events | ![Events](project%20images/event.png) |
+| Clubs | ![Clubs](project%20images/club.png) |
+| About | ![About](project%20images/about.png) |
+| Sign In | ![Sign In](project%20images/signin.png) |
+| Sign Up | ![Sign Up](project%20images/signup.png) |
 
 ---
 
@@ -308,6 +308,6 @@ file for details.
 
 **Mitul Upadhyay**
 
-- GitHub: [@mitulupadhyay](https://github.com/mitulupadhyay)
-- LinkedIn: _add your LinkedIn URL_
-- Portfolio: _add your portfolio URL_
+* GitHub: [@mitulupadhyay](https://github.com/mitulupadhyay)
+* LinkedIn: [Mitul Upadhyay](https://www.linkedin.com/in/mitul-upadhyay/)
+* Portfolio: [mitul.is-a.dev](https://mitul.is-a.dev/)
