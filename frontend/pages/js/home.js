@@ -1,7 +1,6 @@
 // home.js
-// Powers the "Recommended For You" section on the home page.
-// This is mock event data for now - once there's a backend, this whole
-// list can be swapped for a GET /events call instead.
+// Mock data for the Recommended For You section.
+// Replace with a GET /events call when the backend is ready.
 
 const recommendedMockEvents = [
     {
@@ -129,8 +128,7 @@ function getMatchingEvents(userInterests) {
 
 }
 
-// Builds one event card DOM element (same markup as the real event cards
-// on events.html, so the existing card styles apply automatically)
+// Build an event card using the same markup as events.html
 function buildRecommendedCard(event) {
 
     const card = document.createElement("div");
@@ -175,8 +173,7 @@ function buildRecommendedCard(event) {
 
 }
 
-// Fills in the Recommended For You section, or shows the empty state
-// if the visitor hasn't picked any interests yet
+// Show recommended events based on the visitor's interests.
 function renderRecommended() {
 
     const grid = document.getElementById("recommended-grid");
@@ -218,8 +215,7 @@ function renderRecommended() {
 document.addEventListener("DOMContentLoaded", renderRecommended);
 
 
-// EVENT DETAILS MODAL (shared by the "Upcoming Events" cards and the
-// "Recommended For You" cards - both just call openHomeEventModal(event))
+// Shared event details modal for Upcoming and Recommended events
 
 const homeEventModalOverlay = document.getElementById("home-event-modal-overlay");
 const homeEventModalClose = document.getElementById("home-event-modal-close");
@@ -335,8 +331,8 @@ document.addEventListener("keydown", (keyEvent) => {
 
 });
 
-// Register button inside the modal - toggles registered / not registered.
-// Just like the real Events page, you need to be signed in to register.
+// Register button inside the modal - toggles registered / not registered
+// Just like the real Events page, you need to be signed in to register
 if (homeEventModalRegisterBtn) {
 
     homeEventModalRegisterBtn.addEventListener("click", (clickEvent) => {
@@ -371,8 +367,69 @@ if (homeEventModalRegisterBtn) {
 
 }
 
-// Wire up the 3 static "Upcoming Events" cards to open the same modal
-// instead of just sitting there as dead links
+// Share saved events with the Events page using the same localStorage key.
+
+function getSavedEvents() {
+    return JSON.parse(localStorage.getItem("campusConnectSavedEvents") || "[]");
+}
+
+function saveSavedEvents(savedList) {
+    localStorage.setItem("campusConnectSavedEvents", JSON.stringify(savedList));
+}
+
+function toggleBookmark(event, button) {
+
+    const savedEvents = getSavedEvents();
+    const index = savedEvents.indexOf(event.title);
+    const icon = button.querySelector("i");
+
+    if (index === -1) {
+        savedEvents.push(event.title);
+        button.classList.add("bookmarked");
+        button.setAttribute("aria-pressed", "true");
+        if (icon) icon.className = "fa-solid fa-heart";
+    } else {
+        savedEvents.splice(index, 1);
+        button.classList.remove("bookmarked");
+        button.setAttribute("aria-pressed", "false");
+        if (icon) icon.className = "fa-regular fa-heart";
+    }
+
+    saveSavedEvents(savedEvents);
+
+}
+
+// Adds a heart-shaped bookmark button to a card's badge row
+function addBookmarkButton(card, event) {
+
+    const cardBadges = card.querySelector(".card-badges");
+    if (!cardBadges) return;
+
+    const bookmarkBtn = document.createElement("button");
+    bookmarkBtn.type = "button";
+    bookmarkBtn.className = "bookmark-btn";
+    bookmarkBtn.setAttribute("aria-label", "Save event");
+
+    if (getSavedEvents().includes(event.title)) {
+        bookmarkBtn.innerHTML = '<i class="fa-solid fa-heart" aria-hidden="true"></i>';
+        bookmarkBtn.classList.add("bookmarked");
+        bookmarkBtn.setAttribute("aria-pressed", "true");
+    } else {
+        bookmarkBtn.innerHTML = '<i class="fa-regular fa-heart" aria-hidden="true"></i>';
+        bookmarkBtn.setAttribute("aria-pressed", "false");
+    }
+
+    bookmarkBtn.addEventListener("click", (clickEvent) => {
+        clickEvent.preventDefault();
+        clickEvent.stopPropagation();
+        toggleBookmark(event, bookmarkBtn);
+    });
+
+    cardBadges.appendChild(bookmarkBtn);
+
+}
+
+// Make the Upcoming Events cards open the event modal
 document.querySelectorAll(".upcoming-events-grid .event-card").forEach((card) => {
 
     const event = {
@@ -386,6 +443,8 @@ document.querySelectorAll(".upcoming-events-grid .event-card").forEach((card) =>
         image: card.querySelector(".card-image img").src,
         imageAlt: card.querySelector(".card-image img").alt
     };
+
+    addBookmarkButton(card, event);
 
     const viewBtn = card.querySelector(".btn-outline");
     const registerBtn = card.querySelector(".btn-solid");
@@ -516,8 +575,8 @@ document.addEventListener("keydown", (keyEvent) => {
 
 });
 
-// Join Club button inside the modal - toggles joined / not joined.
-// Just like a real membership action, you need to be signed in to join.
+// Join Club button inside the modal - toggles joined / not joined
+// Just like a real membership action, you need to be signed in to join
 if (homeClubModalJoinBtn) {
 
     homeClubModalJoinBtn.addEventListener("click", () => {

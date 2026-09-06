@@ -217,9 +217,7 @@ if (heroCarousel) {
 }
 
 
-// NOTIFICATIONS
-// Mock data for now - shown only once a demo user is "signed in".
-// No backend yet, so notifications live in localStorage just like everything else here.
+// Mock notifications stored in localStorage for signed-in users
 
 function getNotifications() {
     return JSON.parse(localStorage.getItem("campusConnectNotifications") || "[]");
@@ -250,8 +248,7 @@ if (getNotifications().length === 0) {
     addNotification("AI Workshop starts tomorrow at 10 AM!");
 }
 
-// Keeps every bell badge on the page in sync (there can be two - one in
-// the desktop nav, one in the mobile menu)
+// Keep all notification badges in sync
 function updateAllNotificationBadges() {
 
     const unreadCount = getNotifications().filter((notif) => !notif.read).length;
@@ -313,8 +310,7 @@ function renderNotificationList(listEl) {
 
 }
 
-// Builds one notification bell + badge + dropdown, returns the container
-// so the caller can drop it into the navbar wherever it belongs
+// Build the notification bell, badge, and dropdown
 function buildNotificationBell() {
 
     const container = document.createElement("div");

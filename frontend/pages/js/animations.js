@@ -4,6 +4,38 @@
 
 const revealElements = document.querySelectorAll("[data-reveal]");
 
+
+const STAGGER_STEP_MS = 90;
+
+
+const MAX_STAGGERED_ITEMS = 6;
+
+
+const revealGroups = new Map();
+
+revealElements.forEach((el) => {
+
+    const parent = el.parentElement;
+
+    if (!revealGroups.has(parent)) {
+        revealGroups.set(parent, []);
+    }
+
+    revealGroups.get(parent).push(el);
+
+});
+
+revealGroups.forEach((siblings) => {
+
+    siblings.forEach((el, index) => {
+
+        const step = Math.min(index, MAX_STAGGERED_ITEMS);
+        el.style.setProperty("--reveal-delay", (step * STAGGER_STEP_MS) + "ms");
+
+    });
+
+});
+
 if (revealElements.length > 0 && "IntersectionObserver" in window) {
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -26,7 +58,8 @@ if (revealElements.length > 0 && "IntersectionObserver" in window) {
 
 } else {
 
-    // No IntersectionObserver support show everything
+    // No IntersectionObserver
+    
     revealElements.forEach((el) => el.classList.add("is-visible"));
 
 }

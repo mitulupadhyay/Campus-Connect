@@ -1,5 +1,5 @@
 // clubs.js
-// This file powers the search box, category filter chips, and pagination
+// This file contain search box, category filter chips, and pagination
 
 const clubCards = document.querySelectorAll(".clubs-grid .club-card");
 
@@ -18,7 +18,7 @@ if (clubCards.length > 0) {
     let activeCategory = "All Clubs";
     let currentPage = 1;
 
-    // Build a simple array of club info, one object per card.
+    // Build a simple array of club info  one object per card
 
     const clubs = [];
 
@@ -88,7 +88,7 @@ if (clubCards.length > 0) {
 
     }
 
-    // Shows only the clubs that belong on the current page and hide the rest using hidden card class
+    // Show only the clubs for the current page.
 
     function renderClubs() {
 
@@ -108,11 +108,13 @@ if (clubCards.length > 0) {
         const pageClubs = filtered.slice(start, end);
 
         // Hide every card first
+
         clubs.forEach((club) => {
             club.card.classList.add("hidden-card");
         });
 
         // then show only the ones that belong on this page
+
         pageClubs.forEach((club) => {
             club.card.classList.remove("hidden-card");
         });
@@ -129,7 +131,7 @@ if (clubCards.length > 0) {
 
     }
 
-    // Builds the row of page number buttons (Pagination)
+    // Builds the row of page number buttons :- pagination
     function renderPagination(totalPages) {
 
         if (paginationNumbers) {
@@ -168,7 +170,7 @@ if (clubCards.length > 0) {
 
     }
 
-    // Re-run the search every time the user types
+    // Re run the search every time the user types
     if (searchInput) {
         searchInput.addEventListener("input", () => {
             currentPage = 1;
@@ -237,8 +239,7 @@ if (clubCards.length > 0) {
     // Keeps track of which club is currently open in the modal
     let currentModalClub = null;
 
-    // Remembers what was focused before the modal opened, so we can
-    // put focus back there once the modal closes
+    // Remember the last focused element so we can focus it again when the modal closes
     let clubLastFocusedElement = null;
 
     function getJoinedClubs() {
@@ -249,7 +250,7 @@ if (clubCards.length > 0) {
         localStorage.setItem("campusConnectJoinedClubs", JSON.stringify(joinedList));
     }
 
-    // Makes the Join button show the right state (Join Club vs Joined)
+    // Makes the Join button show the right state :- Join Club/Joined)
     function updateJoinButton(club) {
 
         if (!clubModalJoinBtn) return;
@@ -266,7 +267,7 @@ if (clubCards.length > 0) {
 
     }
 
-    // Fills the modal with one club's info and shows it
+    // Fills the modal with one clubs info and shows it
     function openClubModal(club) {
 
         if (!clubModalOverlay) return;
@@ -355,7 +356,7 @@ if (clubCards.length > 0) {
 
     });
 
-    // Shows the "you've joined" / "you've left" toast
+    // Shows the "you have joined" / "you've left" toast
     let clubToastTimer = null;
 
     function showClubToast(message) {
@@ -375,7 +376,7 @@ if (clubCards.length > 0) {
 
     }
 
-    // Join button inside the modal - clicking again after joining leaves the club
+    // Join button inside the modal  clicking again after joining leaves the club
     if (clubModalJoinBtn) {
 
         clubModalJoinBtn.addEventListener("click", () => {
@@ -383,6 +384,7 @@ if (clubCards.length > 0) {
             if (!currentModalClub) return;
 
             // Must be signed in to join a club, same rule as registering for an event
+
             const loggedInUser = JSON.parse(localStorage.getItem("campusConnectUser") || "null");
 
             if (!loggedInUser) {
@@ -415,9 +417,7 @@ if (clubCards.length > 0) {
 
     }
 
-    // If we got here from a link like clubs.html?club=Some+Club
-    // (e.g. from the "Learn More" cards on the home page), open that
-    // club's modal right away instead of just showing the grid.
+    // Open the club from the URL, if one was provided.
     const urlParams = new URLSearchParams(window.location.search);
     const requestedClubName = urlParams.get("club");
 

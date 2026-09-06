@@ -1,9 +1,7 @@
 // events.js
-// This file powers the search box, sort dropdown, category filter chips,
+// Handles event search, sorting, and filters
 
-
-// Turns text like "24/08/26, 12:00 PM" into a real JavaScript Date
-// so we can compare and sort events by when they happen.
+// Convert event dates into JavaScript Date objects for sorting and comparison
 function parseEventDate(text) {
 
     const parts = text.split(",");
@@ -113,9 +111,8 @@ if (eventCards.length > 0) {
 
     });
 
-    // Mark cards that are almost full or completely full so the seat
-    // count stands out (still shown even if the event isn't on the
-    // current page/filter, since it's just a style hint on the card).
+    // Highlight events that are almost full or sold out
+
     events.forEach((event) => {
 
         const seatStatus = event.card.querySelector(".seat-status");
@@ -127,8 +124,7 @@ if (eventCards.length > 0) {
     });
 
 
-    // SAVED / BOOKMARKED EVENTS
-    // No backend yet, so saved events live in localStorage for now.
+    // Store saved events in localStorage until the backend is ready
 
     function getSavedEvents() {
         return JSON.parse(localStorage.getItem("campusConnectSavedEvents") || "[]");
@@ -139,6 +135,7 @@ if (eventCards.length > 0) {
     }
 
     // Adds or removes one event from the saved list and updates the button
+
     function toggleBookmark(event, button) {
 
         const savedEvents = getSavedEvents();
@@ -168,6 +165,7 @@ if (eventCards.length > 0) {
     }
 
     // Adds a heart-shaped bookmark button to every event card
+
     events.forEach((event) => {
 
         const cardBadges = event.card.querySelector(".card-badges");
@@ -197,9 +195,8 @@ if (eventCards.length > 0) {
 
     });
 
-    // Returns true if the given event date falls within "This Week" or
-    // "This Month" from right now. Kept simple: "This Week" is a rolling
-    // 7 days from today, "This Month" is the current calendar month.
+    // Check if the event falls within This Week or This Month
+
     function matchesDateFilter(eventDate, filterValue) {
 
         if (filterValue === "any" || !filterValue) {
@@ -386,7 +383,7 @@ if (eventCards.length > 0) {
 
     }
 
-    // Builds the row of page number buttons (pagination)
+    // Builds the row of page number buttons :-pagination
     function renderPagination(totalPages) {
 
         if (paginationNumbers) {
@@ -425,7 +422,7 @@ if (eventCards.length > 0) {
 
     }
 
-    // Re-run the search every time the user types
+    // Re run the search every time the user types
     if (searchInput) {
         searchInput.addEventListener("input", () => {
             currentPage = 1;
@@ -433,14 +430,14 @@ if (eventCards.length > 0) {
         });
     }
 
-    // Re-sort whenever the dropdown changes
+    // Re sort whenever the dropdown changes
     if (sortSelect) {
         sortSelect.addEventListener("change", () => {
             renderEvents();
         });
     }
 
-    // Re-filter whenever the date or audience dropdown changes
+    // Re filter whenever the date or audience dropdown changes
     if (dateFilterSelect) {
         dateFilterSelect.addEventListener("change", () => {
             currentPage = 1;
@@ -495,8 +492,7 @@ if (eventCards.length > 0) {
         });
     }
 
-    // "Clear Filters" button in the no-results empty state - resets
-    // search, date, and audience, and switches back to All Events
+    // Reset all filters and switch back to All Events.
     const clearFiltersBtn = document.getElementById("clear-filters-btn");
 
     if (clearFiltersBtn) {
@@ -544,8 +540,7 @@ if (eventCards.length > 0) {
     // Keeps track of which event is currently open in the modal
     let currentModalEvent = null;
 
-    // Remembers what was focused before the modal opened, so we can
-    // put focus back there once the modal closes
+    // Remember the focused element so we can restore focus when the modal closes
     let lastFocusedElement = null;
 
     // Fills the modal with one event's info and shows it
@@ -627,11 +622,7 @@ if (eventCards.length > 0) {
     });
 
 
-    // REGISTER BUTTON LOGIC
-    // No backend yet, so "signed in" and "registered" both live in
-    // localStorage for now. Later, registerForEvent() below is the
-    // one place that should be swapped for a real
-    // POST /events/:eventId/register call.
+    // Store sign-in and registration in localStorage until the backend is ready.
 
     function getRegisteredEvents() {
         return JSON.parse(localStorage.getItem("campusConnectRegistrations") || "[]");
@@ -665,8 +656,7 @@ if (eventCards.length > 0) {
 
     }
 
-    // Makes a Register button show the right state when the page loads
-    // or the modal opens (Register vs Registered vs Registration Closed)
+    // Update the button state when the page or modal opens.
     function updateRegisterButton(button, event) {
 
         if (!button) return;
@@ -685,7 +675,7 @@ if (eventCards.length > 0) {
 
     }
 
-    // Shows the "successfully registered" / "registration cancelled" toast
+    // Shows the "successfully registered" / "registration cancelled" toast message
     let toastTimer = null;
 
     function showRegisterToast(message) {
@@ -705,8 +695,7 @@ if (eventCards.length > 0) {
 
     }
 
-    // Runs when a visitor clicks Register/Registered, either on a card
-    // or inside the modal. Clicking again after registering un-registers.
+    // Handle registering or unregistering for an event.
     function registerForEvent(event) {
 
         const loggedInUser = JSON.parse(localStorage.getItem("campusConnectUser") || "null");
@@ -755,8 +744,7 @@ if (eventCards.length > 0) {
 
     }
 
-    // Wire up the Register button on every event card and show the
-    // correct starting state in case the visitor already registered before
+    // Set up the Register button and show the right state for already registered users
     events.forEach((event) => {
 
         updateRegisterButton(event.registerBtn, event);
@@ -787,12 +775,9 @@ if (eventCards.length > 0) {
     }
 
 
-    // Show the events when the page loads
     renderEvents();
 
-    // If we got here from a link like events.html?event=Some+Title
-    // (e.g. from the "View Details"/"Register" buttons on the home page),
-    // open that event's modal right away instead of just showing the list.
+    // Open the event from the URL, if one was provided.
     const urlParams = new URLSearchParams(window.location.search);
     const requestedEventTitle = urlParams.get("event");
 

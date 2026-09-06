@@ -31,7 +31,7 @@ passwordToggles.forEach((toggle) => {
 });
 
 
-// Small helpers shared by both the sign in and sign up forms
+// Small helpers for the sign in and sign up forms
 
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -136,7 +136,7 @@ if (signinEmail && signinPassword) {
 
         if (!isValid) return;
 
-        // No backend yet, so we simulate a successful sign in for the demo
+        // No backend yet, so we simulate successful sign in for the demo
         const selectedRole = signinForm.querySelector('input[name="role"]:checked');
 
         const user = {
@@ -230,7 +230,7 @@ if (signupName && signupEmail && signupPassword && signupConfirmPassword) {
 
         if (!isValid) return;
 
-        // No backend  we simulate a successful sign up for the demo
+        // No backend  we simulate successful sign up for the demo
         
         const selectedRole = signupForm.querySelector('input[name="role"]:checked');
 
@@ -244,6 +244,7 @@ if (signupName && signupEmail && signupPassword && signupConfirmPassword) {
         localStorage.setItem("campusConnectUser", JSON.stringify(user));
 
         // Show a quick success message before sending them to the home page
+
         const authHeader = document.querySelector(".auth-header");
 
         if (authHeader) {

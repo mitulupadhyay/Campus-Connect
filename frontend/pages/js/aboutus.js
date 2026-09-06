@@ -12,7 +12,7 @@ faqItems.forEach((item) => {
 
         const isOpen = item.classList.contains("active");
 
-        // Close every item first (accordion style: only one open at a time)
+        // Close every item first
         faqItems.forEach((otherItem) => {
 
             otherItem.classList.remove("active");
